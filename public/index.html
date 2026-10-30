@@ -137,10 +137,81 @@ label.f{display:block;font-size:12px;color:var(--mut);margin:10px 0 6px;font-wei
 .btns{display:flex;gap:10px;margin-top:18px}
 .btns .btn{flex:1}
 .btns .btn.go{margin-top:0;font-size:18px;padding:13px}
+
+/* ---------- v2 additions ---------- */
+#hBook{font-size:11px;color:var(--mut);margin-top:4px;max-width:200px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.stbar{width:64px;height:4px;border-radius:3px;background:rgba(255,255,255,.12);margin-top:4px;overflow:hidden}
+#stFill{height:100%;width:0;background:linear-gradient(90deg,var(--cyan),#b18cff);transition:width .3s}
+#hStage small{letter-spacing:2px}
+.user{display:flex;align-items:center;gap:12px;padding:12px;border-radius:14px;background:rgba(127,230,255,.07);border:1px solid rgba(127,230,255,.25)}
+.user .av{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;font-weight:900;font-size:18px;color:#0b1430;background:linear-gradient(135deg,#9be7ff,#5b8cff)}
+.user .who{flex:1;min-width:0}
+.user .who b{display:block;font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.user .who small{font-size:11px;color:var(--mut)}
+.bookcard{margin-top:14px;padding:14px;border-radius:14px;background:linear-gradient(135deg,rgba(255,211,107,.10),rgba(255,255,255,.02));border:1px solid rgba(255,211,107,.28)}
+.bookcard .lbl{font-size:11px;letter-spacing:2px;color:var(--gold);font-weight:700}
+.bookcard .ttl{font-size:18px;font-weight:900;margin:4px 0 2px;line-height:1.3;word-break:keep-all}
+.bookcard .meta{font-size:12px;color:var(--mut);display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.bookcard .row{margin-top:10px}
+.bdg{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.5px;padding:2px 7px;border-radius:999px;border:1px solid}
+.bdg.pub{color:var(--green);border-color:rgba(109,255,176,.4);background:rgba(109,255,176,.08)}
+.bdg.pri{color:#ffb3bd;border-color:rgba(255,90,110,.4);background:rgba(255,90,110,.08)}
+.bdg.off{color:var(--gold);border-color:rgba(255,211,107,.4);background:rgba(255,211,107,.08)}
+.bdg.mine{color:var(--cyan);border-color:rgba(127,230,255,.4);background:rgba(127,230,255,.08)}
+.btn:disabled{opacity:.45;cursor:not-allowed;filter:grayscale(.4)}
+.btn.pri{background:linear-gradient(180deg,rgba(127,230,255,.28),rgba(127,230,255,.1));border-color:rgba(127,230,255,.5)}
+.btn.dng{color:#ffb3bd;border-color:rgba(255,90,110,.35)}
+.btn.dng.arm{background:var(--red);color:#fff}
+.stinfo{margin-top:12px;font-size:12px;color:var(--mut);line-height:1.6}
+.stinfo b{color:#fff}
+.tabs{display:flex;gap:6px;background:rgba(0,0,0,.25);padding:5px;border-radius:14px;border:1px solid var(--line)}
+.tabs button{flex:1;padding:10px 0;border-radius:10px;border:0;background:transparent;color:var(--mut);font-weight:700;font-size:14px}
+.tabs button.on{background:rgba(127,230,255,.16);color:#fff;box-shadow:inset 0 0 0 1px rgba(127,230,255,.45)}
+.blist{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px;margin-top:12px;max-height:min(56vh,520px);overflow:auto;padding:2px 4px 2px 0}
+.bitem{position:relative;padding:14px;border-radius:14px;background:rgba(255,255,255,.04);border:1px solid var(--line);cursor:pointer;transition:.15s;display:flex;flex-direction:column;gap:6px}
+.bitem:hover{border-color:rgba(127,230,255,.5);background:rgba(127,230,255,.06);transform:translateY(-1px)}
+.bitem.sel{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold) inset}
+.bitem h4{font-size:15px;font-weight:900;line-height:1.35;word-break:keep-all;padding-right:4px}
+.bitem p{font-size:12px;color:var(--mut);line-height:1.5;min-height:18px}
+.bitem .meta{font-size:11px;color:#8a93bd;display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.bitem .acts{display:flex;gap:6px;margin-top:4px;flex-wrap:wrap}
+.bitem .acts .btn{padding:6px 10px;font-size:12px;border-radius:9px}
+.toggle{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:12px;background:rgba(0,0,0,.25);border:1px solid var(--line);cursor:pointer;user-select:none}
+.toggle .sw{position:relative;width:46px;height:26px;border-radius:13px;background:rgba(255,255,255,.15);transition:.2s;flex:none}
+.toggle .sw::after{content:"";position:absolute;left:3px;top:3px;width:20px;height:20px;border-radius:50%;background:#fff;transition:.2s;box-shadow:0 2px 6px rgba(0,0,0,.4)}
+.toggle.on .sw{background:var(--green)}
+.toggle.on .sw::after{left:23px}
+.toggle b{font-size:14px}
+.toggle small{display:block;font-size:12px;color:var(--mut);font-weight:400;margin-top:2px}
+.ed .tin{margin-bottom:0}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:600px){.grid2{grid-template-columns:1fr}}
+#toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,20px);opacity:0;z-index:50;padding:12px 18px;border-radius:14px;background:rgba(20,22,52,.96);border:1px solid rgba(127,230,255,.4);box-shadow:0 10px 30px rgba(0,0,0,.5);font-size:14px;font-weight:500;transition:.25s;pointer-events:none;max-width:90vw;text-align:center}
+#toast.on{opacity:1;transform:translate(-50%,0)}
+#toast.err{border-color:rgba(255,90,110,.6)}
+.modehint{font-size:11px;color:var(--gold);margin-top:8px}
+.hofttl{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:230px;color:#fff;letter-spacing:0}
+
+.pv-head{display:flex;gap:10px;align-items:flex-start;margin-bottom:12px}
+.pv-head h3{font-size:24px;font-weight:900;line-height:1.3;word-break:keep-all}
+.pv-tools{display:flex;gap:8px;align-items:center;margin-bottom:10px}
+.pv-tools .tin{padding:9px 12px;font-size:14px}
+.wtab{max-height:min(48vh,440px);overflow:auto;border:1px solid var(--line);border-radius:14px;background:rgba(0,0,0,.2)}
+.wtab table{width:100%;border-collapse:collapse;font-size:14px}
+.wtab th{position:sticky;top:0;background:#171940;color:var(--mut);font-size:11px;letter-spacing:1px;text-align:left;padding:9px 12px;font-weight:700}
+.wtab td{padding:8px 12px;border-top:1px solid rgba(255,255,255,.06)}
+.wtab td:first-child{color:#6d76a0;width:48px;font-family:"Chakra Petch"}
+.wtab td.w{font-family:"Chakra Petch","Noto Sans KR";font-weight:700;color:#fff}
+.wtab tr:hover td{background:rgba(127,230,255,.05)}
+.bitem .acts .btn.ghost{background:transparent}
+.lobbytop{display:flex;align-items:center;gap:16px;margin-bottom:18px;flex-wrap:wrap}
+.minilogo{font-family:"Black Han Sans";font-size:30px;background:linear-gradient(180deg,#fffbe8,var(--gold) 50%,#c9761c);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 2px 0 #3b1d05)}
+.lobbytop .user{margin-left:auto;min-width:260px}
 </style>
 </head>
 <body>
 <canvas id="cv"></canvas>
+<div id="toast"></div>
 
 <!-- HUD -->
 <div id="hud">
@@ -149,11 +220,12 @@ label.f{display:block;font-size:12px;color:var(--mut);margin:10px 0 6px;font-wei
     <div>
       <div id="hName">플레이어</div>
       <div class="hp"><div id="hpGhost"></div><div id="hpFill"></div><span id="hpText" class="num">100</span></div>
+      <div id="hBook"></div>
     </div>
   </div>
   <div class="hcard hc"><small>SCORE</small><div id="hScore" class="num">0</div></div>
   <div class="hcard hr">
-    <div class="pill"><small>LEVEL</small><b id="hLevel" class="num">1</b></div>
+    <div class="pill" id="hStage"><small>STAGE</small><b id="hStageN" class="num">1</b><div class="stbar"><div id="stFill"></div></div></div>
     <div class="pill" id="hCombo"><small>COMBO</small><b class="num" id="hComboN">0</b><div id="hMul" class="num"></div></div>
     <button class="ibtn" id="btnMute" title="소리"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="#fff" stroke="none"/><path id="muteWave" d="M16 8.5a5 5 0 010 7M19 6a8.5 8.5 0 010 12"/></svg></button>
     <button class="ibtn" id="btnPause" title="일시정지 (Esc)"><svg viewBox="0 0 24 24" fill="#fff"><rect x="6" y="5" width="4" height="14" rx="1.2"/><rect x="14" y="5" width="4" height="14" rx="1.2"/></svg></button>
@@ -171,48 +243,102 @@ label.f{display:block;font-size:12px;color:var(--mut);margin:10px 0 6px;font-wei
   <div id="feed"></div>
 </div>
 
-<!-- TITLE -->
-<div class="ov on" id="scTitle">
-  <div class="card">
+<!-- LOGIN -->
+<div class="ov on" id="scLogin">
+  <div class="card" style="width:min(420px,94vw)">
     <div class="logo"><h1>단어 요새</h1><p>WORD · FORTRESS</p></div>
+    <div class="sec">
+      <h3>수비대장 입장</h3>
+      <label class="f" for="nick" style="margin-top:0">닉네임</label>
+      <input class="tin" id="nick" maxlength="12" placeholder="최대 12자" autocomplete="off">
+      <label class="f" for="pw">비밀번호</label>
+      <input class="tin" id="pw" type="password" maxlength="64" placeholder="2자 이상" autocomplete="off">
+      <div class="hint">처음 쓰는 닉네임은 이 비밀번호로 바로 등록돼요. 다른 곳에서 쓰는 비밀번호는 넣지 마세요.</div>
+      <div class="err" id="loginErr"></div>
+      <button class="btn go" id="btnLogin" style="margin-top:6px">입장하기</button>
+    </div>
+  </div>
+</div>
+
+<!-- LOBBY (개인 화면) -->
+<div class="ov" id="scTitle">
+  <div class="card">
+    <div class="lobbytop">
+      <div class="minilogo">단어 요새</div>
+      <div class="user"><div class="av" id="uAv">?</div><div class="who"><b id="uName"></b><small>오늘도 요새를 지켜 주세요</small></div><button class="btn sm" id="btnLogout">로그아웃</button></div>
+    </div>
     <div class="cols">
       <div class="sec">
-        <h3>수비대장 등록</h3>
-        <label class="f" for="nick">닉네임</label>
-        <input class="tin" id="nick" maxlength="12" placeholder="최대 12자" autocomplete="off">
-        <label class="f" for="pw">비밀번호</label>
-        <input class="tin" id="pw" type="password" maxlength="32" placeholder="닉네임 보호용" autocomplete="off">
-        <div class="hint">처음 쓰는 닉네임은 이 비밀번호로 등록돼요. 다른 곳에서 쓰는 비밀번호는 넣지 마세요.</div>
-        <label class="f">난이도</label>
-        <div class="seg" id="diffSeg">
-          <button data-d="easy">쉬움</button><button data-d="normal">보통</button><button data-d="hard">어려움</button><button data-d="hell">지옥</button>
+        <h3>단어장 선택</h3>
+        <div class="bookcard" style="margin-top:0">
+          <div class="lbl">선택한 단어장</div>
+          <div class="ttl" id="bTitle">불러오는 중…</div>
+          <div class="meta" id="bMeta"></div>
+          <div class="row">
+            <button class="btn sm pri" id="btnBooks">단어장 고르기</button>
+            <button class="btn sm" id="btnPrevCur">단어 보기</button>
+            <button class="btn sm" id="btnEditCur" style="display:none">편집</button>
+            <button class="btn sm" id="btnNew">+ 새로 만들기</button>
+          </div>
         </div>
-        <div class="wl"><span>단어장 <b id="wCount">0</b>개</span><button class="btn sm" id="btnEdit">단어장 편집</button></div>
-        <div class="err" id="loginErr"></div>
+        <div class="err" id="lobbyErr"></div>
         <button class="btn go" id="btnStart">요새 방어 시작</button>
+        <div class="stinfo">점수가 오를 때마다 <b>STAGE 1 → 10</b>으로 자동 진급해요. 스테이지가 오를수록 몬스터가 빨라지고 많아지며, 5·8·10 스테이지엔 보스가 나와요. 게임 오버 후 다시 하면 STAGE 1부터 시작해요.</div>
         <div class="keys"><span><span class="kbd">ENTER</span> 발사</span><span><span class="kbd">ESC</span> 일시정지</span><span><span class="kbd">한/영</span> 영문 입력</span></div>
       </div>
       <div class="sec">
-        <h3>명예의 전당 <span class="tag" id="hofTag">연결 중…</span></h3>
+        <h3><span class="hofttl" id="hofTitle">명예의 전당</span> <span class="tag" id="hofTag">연결 중…</span></h3>
         <ol class="hof" id="hofList"></ol>
       </div>
     </div>
   </div>
 </div>
 
+<!-- BOOK BROWSER -->
+<div class="ov" id="scBooks">
+  <div class="card" style="width:min(860px,96vw)">
+    <div class="row" style="margin-bottom:14px">
+      <h3 style="font-family:'Black Han Sans';font-weight:400;font-size:28px">단어장</h3>
+      <span class="spacer"></span>
+      <button class="btn sm" id="bkNew">+ 새 단어장</button>
+      <button class="btn sm" id="bkClose">닫기</button>
+    </div>
+    <div class="tabs" id="bkTabs"><button data-t="public" class="on">공개 단어장</button><button data-t="mine">내 단어장</button></div>
+    <input class="tin" id="bkSearch" placeholder="단어장 이름 또는 번호(예: 1001, #1001)로 검색" style="margin-top:12px">
+    <div class="blist" id="bkList"></div>
+    <div class="modehint" id="bkMode"></div>
+  </div>
+</div>
+
+<!-- PREVIEW -->
+<div class="ov" id="scPrev">
+  <div class="card" style="width:min(640px,96vw)">
+    <div class="pv-head"><div style="flex:1;min-width:0"><div class="meta" id="pvMeta" style="font-size:12px;color:var(--mut);display:flex;gap:6px;flex-wrap:wrap;align-items:center"></div><h3 id="pvTitle"></h3><p class="hint" id="pvDesc" style="font-size:13px;margin-top:2px"></p></div></div>
+    <div class="pv-tools"><input class="tin" id="pvSearch" placeholder="단어 또는 뜻으로 찾기"><span class="hint" id="pvCount" style="margin:0;white-space:nowrap"></span></div>
+    <div class="wtab"><table><thead><tr><th>#</th><th>영단어</th><th>뜻</th></tr></thead><tbody id="pvBody"></tbody></table></div>
+    <div class="btns"><button class="btn" id="pvClose">닫기</button><button class="btn" id="pvAlt"></button><button class="btn go" id="pvPlay">이걸로 플레이</button></div>
+  </div>
+</div>
+
 <!-- EDITOR -->
 <div class="ov" id="scEdit">
-  <div class="card ed" style="width:min(640px,94vw)">
-    <h3 style="font-family:'Black Han Sans';font-weight:400;font-size:26px;margin-bottom:6px">단어장 편집</h3>
-    <p class="hint" style="font-size:12px;margin-bottom:12px">한 줄에 한 쌍씩: <b style="color:#fff">영단어 - 뜻</b>. 구분자로 <b style="color:#fff">탭 · , · : · = · |</b> 도 쓸 수 있어요. 엑셀에서 두 열을 복사해 붙여 넣어도 돼요.</p>
-    <textarea id="wordsTa" spellcheck="false"></textarea>
-    <div class="row" style="margin-top:12px">
+  <div class="card ed" style="width:min(680px,96vw)">
+    <h3 style="font-family:'Black Han Sans';font-weight:400;font-size:26px;margin-bottom:12px" id="edHead">새 단어장</h3>
+    <div class="grid2">
+      <div><label class="f" for="edTitle" style="margin-top:0">단어장 이름</label><input class="tin" id="edTitle" maxlength="40" placeholder="예: 수능 기출 1000"></div>
+      <div><label class="f" for="edDesc" style="margin-top:0">한 줄 설명 (선택)</label><input class="tin" id="edDesc" maxlength="120" placeholder="예: 3월 모의고사 범위"></div>
+    </div>
+    <label class="f">단어 목록 — 한 줄에 한 쌍씩 <b style="color:#fff">영단어 - 뜻</b> (탭 · , · : · = · | 도 가능)</label>
+    <textarea id="wordsTa" spellcheck="false" placeholder="apple - 사과&#10;banana - 바나나&#10;cherry - 체리"></textarea>
+    <div class="row" style="margin-top:8px">
       <span class="hint" id="parseInfo" style="margin:0"></span>
       <span class="spacer"></span>
-      <button class="btn sm" data-preset="basic">예시: 필수 영단어</button>
-      <button class="btn sm" data-preset="med">예시: 의학 용어</button>
+      <button class="btn sm" data-preset="basic">예시 넣기: 필수 영단어</button>
+      <button class="btn sm" data-preset="med">예시 넣기: 의학 용어</button>
     </div>
-    <div class="btns"><button class="btn" id="edCancel">취소</button><button class="btn go" id="edSave">저장</button></div>
+    <div class="toggle on" id="edPub" style="margin-top:12px"><div class="sw"></div><div><b id="edPubT">공개</b><small id="edPubS">다른 사람도 검색해서 이 단어장으로 플레이할 수 있어요</small></div></div>
+    <div class="err" id="edErr"></div>
+    <div class="btns" style="margin-top:10px"><button class="btn" id="edCancel">취소</button><button class="btn go" id="edSave">저장하고 선택</button></div>
   </div>
 </div>
 
@@ -233,7 +359,7 @@ label.f{display:block;font-size:12px;color:var(--mut);margin:10px 0 6px;font-wei
     <div class="final num" id="fScore">0</div>
     <div id="hofMsg"></div>
     <div class="stats">
-      <div><small>도달 레벨</small><b id="sLevel">1</b></div>
+      <div><small>도달 스테이지</small><b id="sStage">1</b></div>
       <div><small>처치</small><b id="sKills">0</b></div>
       <div><small>최대 콤보</small><b id="sCombo">0</b></div>
       <div><small>정확도</small><b id="sAcc">0%</b></div>
@@ -244,7 +370,7 @@ label.f{display:block;font-size:12px;color:var(--mut);margin:10px 0 6px;font-wei
       <h3 style="margin-bottom:10px">놓친 단어 복습 <span class="tag loc" id="missN">0</span></h3>
       <div class="miss" id="missList"></div>
     </div>
-    <div class="btns"><button class="btn" id="btnHome">메인으로</button><button class="btn go" id="btnAgain">다시 도전</button></div>
+    <div class="btns"><button class="btn" id="btnHome">메인으로</button><button class="btn go" id="btnAgain">다시 도전 (STAGE 1)</button></div>
   </div>
 </div>
 
@@ -355,21 +481,486 @@ function parseWords(text){
   }
   return {pairs:out,bad};
 }
-let WORDTEXT=LS.get("wf_words",PRESETS.basic);
-let PAIRS=parseWords(WORDTEXT).pairs;
-let MEANMAP=new Map();
-function buildMeanMap(){MEANMAP=new Map();for(const p of PAIRS){const k=p.m;if(!MEANMAP.has(k))MEANMAP.set(k,new Set());MEANMAP.get(k).add(norm(p.w))}}
-function norm(s){return String(s).trim().toLowerCase().replace(/\s+/g," ")}
-buildMeanMap();
+/* ================= shared core (same as netlify/functions/lib/core.mjs) ================= */
+// 단어 요새 — 서버 핵심 로직 (저장소 독립적)
+// 서버(Netlify Blobs)와 브라우저(localStorage 오프라인 모드)가 같은 코드를 씁니다.
+// store: { get(key) -> object|null, set(key, value) }
+// hash:  async (pw, salt) -> hex string
+// builtins: [{ id, title, desc, pairs:[{w,m}] }]
 
-/* ================= difficulty ================= */
-const DIFF={
-  easy:{name:"쉬움",speed:1.4,spawn:1.35,dmg:.7,score:.8},
-  normal:{name:"보통",speed:1,spawn:1,dmg:1,score:1},
-  hard:{name:"어려움",speed:.8,spawn:.8,dmg:1.25,score:1.35},
-  hell:{name:"지옥",speed:.62,spawn:.62,dmg:1.6,score:1.8}
-};
-let diffKey=LS.get("wf_diff","normal"); if(!DIFF[diffKey]) diffKey="normal";
+async function handle({ store, hash, builtins, route, method, query, body, randomId, now }) {
+  const ok = (data) => ({ status: 200, data });
+  const fail = (status, error) => ({ status, data: { error } });
+  const T = typeof now === "function" ? now() : Date.now();
+
+  const clean = (s, max) => String(s ?? "").replace(/[\u0000-\u001f\u007f<>]/g, "").trim().replace(/\s+/g, " ").slice(0, max);
+  const lower = (s) => String(s).toLowerCase();
+  const hexOf = (s) => Array.from(new TextEncoder().encode(lower(s))).map((b) => b.toString(16).padStart(2, "0")).join("");
+  const int = (v, lo, hi) => { const n = Math.round(Number(v)); return Number.isFinite(n) ? Math.min(hi, Math.max(lo, n)) : lo; };
+
+  const BUILTIN = new Map(builtins.map((b) => [b.id, b]));
+  const builtinMeta = (b, plays) => ({ id: b.id, no: b.no, title: b.title, desc: b.desc || "", owner: "단어 요새", count: b.pairs.length, public: true, builtin: true, plays: plays[b.id] || 0, updated: 0 });
+
+  async function loadIndex() { return (await store.get("index/books")) || []; }
+  async function loadPlays() { return (await store.get("stats/plays")) || {}; }
+
+  // ---- auth ----
+  async function auth(requireExisting) {
+    const nick = clean(body?.nick, 12);
+    const pw = body?.pw;
+    if (!nick) return { err: fail(400, "닉네임을 입력해 주세요.") };
+    if (typeof pw !== "string" || pw.length < 2 || pw.length > 64) return { err: fail(400, "비밀번호는 2~64자로 입력해 주세요.") };
+    const key = "users/" + hexOf(nick);
+    let user = await store.get(key);
+    if (user) {
+      const h = await hash(pw, user.salt);
+      if (h !== user.hash) return { err: fail(401, "이미 등록된 닉네임이에요. 비밀번호가 맞지 않아요.") };
+      return { user, key, nick: user.name };
+    }
+    if (requireExisting) return { err: fail(401, "로그인이 필요해요.") };
+    const salt = randomId(16);
+    user = { name: nick, salt, hash: await hash(pw, salt), created: T };
+    await store.set(key, user);
+    return { user, key, nick, created: true };
+  }
+  const isOwner = (meta, nick) => meta && lower(meta.owner) === lower(nick);
+
+  // ---- routes ----
+  if (route === "login" && method === "POST") {
+    const a = await auth(false); if (a.err) return a.err;
+    return ok({ ok: true, nick: a.nick, created: !!a.created });
+  }
+
+  if (route === "books" && method === "GET") {
+    const q = lower(clean(query?.q, 40));
+    const plays = await loadPlays();
+    const idx = await loadIndex();
+    let list = [...builtins.map((b) => builtinMeta(b, plays)), ...idx.filter((b) => b.public).map((b) => ({ ...b, plays: plays[b.id] || 0 }))];
+    if (q) {
+      const num = q.match(/^(?:#|no\.?\s*)?(\d+)$/);
+      list = num ? list.filter((b) => b.no === Number(num[1]))
+                 : list.filter((b) => lower(b.title + " " + b.owner + " " + (b.desc || "")).includes(q));
+    }
+    list.sort((a, b) => (b.builtin - a.builtin) || (b.plays - a.plays) || (b.updated - a.updated));
+    return ok({ books: list.slice(0, 200) });
+  }
+
+  if (route === "mybooks" && method === "POST") {
+    const a = await auth(true); if (a.err) return a.err;
+    const plays = await loadPlays();
+    const list = (await loadIndex()).filter((b) => isOwner(b, a.nick)).map((b) => ({ ...b, plays: plays[b.id] || 0 })).sort((x, y) => y.updated - x.updated);
+    return ok({ books: list });
+  }
+
+  if (route === "book" && method === "POST") {
+    const id = clean(body?.id, 40);
+    const plays = await loadPlays();
+    if (BUILTIN.has(id)) { const b = BUILTIN.get(id); return ok({ book: { ...builtinMeta(b, plays), pairs: b.pairs } }); }
+    const book = await store.get("books/" + id);
+    if (!book) return fail(404, "단어장을 찾을 수 없어요.");
+    if (!book.public) {
+      const a = await auth(true); if (a.err) return fail(404, "단어장을 찾을 수 없어요.");
+      if (!isOwner(book, a.nick)) return fail(404, "단어장을 찾을 수 없어요.");
+    }
+    return ok({ book: { ...book, plays: plays[book.id] || 0 } });
+  }
+
+  if (route === "book/save" && method === "POST") {
+    const a = await auth(true); if (a.err) return a.err;
+    const title = clean(body?.title, 40);
+    if (!title) return fail(400, "단어장 이름을 입력해 주세요.");
+    const desc = clean(body?.desc, 120);
+    const raw = Array.isArray(body?.pairs) ? body.pairs : [];
+    const seen = new Set(); const pairs = [];
+    for (const p of raw) {
+      const w = clean(p?.w, 60), m = clean(p?.m, 100);
+      if (!w || !m) continue;
+      const k = lower(w) + "\u0000" + m; if (seen.has(k)) continue; seen.add(k);
+      pairs.push({ w, m }); if (pairs.length >= 3000) break;
+    }
+    if (pairs.length < 3) return fail(400, "단어가 3쌍 이상 필요해요.");
+    const pub = !!body?.public;
+    let idx = await loadIndex();
+    let id = clean(body?.id, 40);
+    let book = id ? await store.get("books/" + id) : null;
+    if (book && !isOwner(book, a.nick)) return fail(403, "내 단어장만 고칠 수 있어요.");
+    if (!book) {
+      if (idx.filter((b) => isOwner(b, a.nick)).length >= 50) return fail(400, "단어장은 한 사람당 50개까지 만들 수 있어요.");
+      const seq = ((await store.get("stats/seq")) || { n: 1000 }).n + 1;
+      await store.set("stats/seq", { n: seq });
+      id = randomId(10); book = { id, no: seq, owner: a.nick, created: T };
+    }
+    Object.assign(book, { title, desc, pairs, public: pub, count: pairs.length, updated: T });
+    await store.set("books/" + id, book);
+    const meta = { id, no: book.no, title, desc, owner: book.owner, count: pairs.length, public: pub, builtin: false, updated: T, created: book.created };
+    idx = idx.filter((b) => b.id !== id); idx.push(meta);
+    await store.set("index/books", idx);
+    return ok({ book: meta });
+  }
+
+  if (route === "book/delete" && method === "POST") {
+    const a = await auth(true); if (a.err) return a.err;
+    const id = clean(body?.id, 40);
+    const book = await store.get("books/" + id);
+    if (!book || !isOwner(book, a.nick)) return fail(404, "단어장을 찾을 수 없어요.");
+    await store.set("books/" + id, null);
+    await store.set("index/books", (await loadIndex()).filter((b) => b.id !== id));
+    return ok({ ok: true });
+  }
+
+  const pubRows = (rows) => rows.slice(0, 100).map(({ name, score, stage, combo, acc, cpm, at }) => ({ name, score, stage, combo, acc, cpm, at }));
+
+  if (route === "hof" && method === "GET") {
+    const id = clean(query?.book, 40);
+    if (!BUILTIN.has(id)) { const m = (await loadIndex()).find((b) => b.id === id); if (!m) return ok({ rows: [] }); }
+    return ok({ rows: pubRows((await store.get("hof/" + id)) || []) });
+  }
+
+  if (route === "score" && method === "POST") {
+    const a = await auth(false); if (a.err) return a.err;
+    const id = clean(body?.book, 40);
+    if (!BUILTIN.has(id)) {
+      const m = (await loadIndex()).find((b) => b.id === id);
+      if (!m) return fail(404, "단어장을 찾을 수 없어요.");
+      if (!m.public && !isOwner(m, a.nick)) return fail(404, "단어장을 찾을 수 없어요.");
+    }
+    const rec = { name: a.nick, score: int(body.score, 0, 10_000_000), stage: int(body.stage, 1, 10), kills: int(body.kills, 0, 100000),
+      combo: int(body.combo, 0, 100000), acc: int(body.acc, 0, 100), cpm: int(body.cpm, 0, 3000), time: int(body.time, 0, 86400), at: T };
+    const plays = await loadPlays(); plays[id] = (plays[id] || 0) + 1; await store.set("stats/plays", plays);
+    let rows = (await store.get("hof/" + id)) || [];
+    const prev = rows.find((r) => lower(r.name) === lower(a.nick));
+    const newBest = rec.score > 0 && (!prev || rec.score > prev.score);
+    if (newBest) {
+      rows = rows.filter((r) => lower(r.name) !== lower(a.nick)); rows.push(rec);
+      rows.sort((x, y) => y.score - x.score || x.at - y.at); rows = rows.slice(0, 500);
+      await store.set("hof/" + id, rows);
+    }
+    const i = rows.findIndex((r) => lower(r.name) === lower(a.nick));
+    return ok({ ok: true, newBest, best: newBest ? rec.score : prev ? prev.score : 0, rank: i >= 0 ? i + 1 : null, rows: pubRows(rows) });
+  }
+
+  return fail(404, "알 수 없는 요청이에요.");
+}
+
+// 기본 제공 단어장
+const BUILTINS = [
+ {
+  "id": "basic",
+  "no": 1,
+  "title": "필수 영단어 40",
+  "desc": "자주 나오는 기본 영단어 모음",
+  "pairs": [
+   {
+    "w": "abandon",
+    "m": "버리다"
+   },
+   {
+    "w": "accurate",
+    "m": "정확한"
+   },
+   {
+    "w": "achieve",
+    "m": "성취하다"
+   },
+   {
+    "w": "adapt",
+    "m": "적응하다"
+   },
+   {
+    "w": "ancient",
+    "m": "고대의"
+   },
+   {
+    "w": "anxious",
+    "m": "불안한"
+   },
+   {
+    "w": "apparent",
+    "m": "명백한"
+   },
+   {
+    "w": "attempt",
+    "m": "시도하다"
+   },
+   {
+    "w": "avoid",
+    "m": "피하다"
+   },
+   {
+    "w": "benefit",
+    "m": "이익"
+   },
+   {
+    "w": "brief",
+    "m": "짧은"
+   },
+   {
+    "w": "capable",
+    "m": "능력 있는"
+   },
+   {
+    "w": "challenge",
+    "m": "도전"
+   },
+   {
+    "w": "community",
+    "m": "공동체"
+   },
+   {
+    "w": "consider",
+    "m": "고려하다"
+   },
+   {
+    "w": "crucial",
+    "m": "중대한"
+   },
+   {
+    "w": "decline",
+    "m": "감소하다"
+   },
+   {
+    "w": "deny",
+    "m": "부인하다"
+   },
+   {
+    "w": "efficient",
+    "m": "효율적인"
+   },
+   {
+    "w": "emerge",
+    "m": "나타나다"
+   },
+   {
+    "w": "enormous",
+    "m": "거대한"
+   },
+   {
+    "w": "evidence",
+    "m": "증거"
+   },
+   {
+    "w": "expand",
+    "m": "확장하다"
+   },
+   {
+    "w": "familiar",
+    "m": "익숙한"
+   },
+   {
+    "w": "fragile",
+    "m": "깨지기 쉬운"
+   },
+   {
+    "w": "generous",
+    "m": "관대한"
+   },
+   {
+    "w": "habit",
+    "m": "습관"
+   },
+   {
+    "w": "ignore",
+    "m": "무시하다"
+   },
+   {
+    "w": "improve",
+    "m": "향상시키다"
+   },
+   {
+    "w": "influence",
+    "m": "영향"
+   },
+   {
+    "w": "journey",
+    "m": "여정"
+   },
+   {
+    "w": "measure",
+    "m": "측정하다"
+   },
+   {
+    "w": "obvious",
+    "m": "분명한"
+   },
+   {
+    "w": "participate",
+    "m": "참가하다"
+   },
+   {
+    "w": "prevent",
+    "m": "막다"
+   },
+   {
+    "w": "recognize",
+    "m": "알아보다"
+   },
+   {
+    "w": "reduce",
+    "m": "줄이다"
+   },
+   {
+    "w": "require",
+    "m": "요구하다"
+   },
+   {
+    "w": "survive",
+    "m": "살아남다"
+   },
+   {
+    "w": "vivid",
+    "m": "생생한"
+   }
+  ]
+ },
+ {
+  "id": "med",
+  "no": 2,
+  "title": "의학 용어 35",
+  "desc": "해부·병리 기초 의학 영어",
+  "pairs": [
+   {
+    "w": "abdomen",
+    "m": "복부"
+   },
+   {
+    "w": "artery",
+    "m": "동맥"
+   },
+   {
+    "w": "vein",
+    "m": "정맥"
+   },
+   {
+    "w": "capillary",
+    "m": "모세혈관"
+   },
+   {
+    "w": "diagnosis",
+    "m": "진단"
+   },
+   {
+    "w": "prognosis",
+    "m": "예후"
+   },
+   {
+    "w": "symptom",
+    "m": "증상"
+   },
+   {
+    "w": "inflammation",
+    "m": "염증"
+   },
+   {
+    "w": "infection",
+    "m": "감염"
+   },
+   {
+    "w": "fever",
+    "m": "열"
+   },
+   {
+    "w": "edema",
+    "m": "부종"
+   },
+   {
+    "w": "necrosis",
+    "m": "괴사"
+   },
+   {
+    "w": "apoptosis",
+    "m": "세포자멸사"
+   },
+   {
+    "w": "tumor",
+    "m": "종양"
+   },
+   {
+    "w": "benign",
+    "m": "양성의"
+   },
+   {
+    "w": "malignant",
+    "m": "악성의"
+   },
+   {
+    "w": "metastasis",
+    "m": "전이"
+   },
+   {
+    "w": "lesion",
+    "m": "병변"
+   },
+   {
+    "w": "biopsy",
+    "m": "생검"
+   },
+   {
+    "w": "chronic",
+    "m": "만성의"
+   },
+   {
+    "w": "acute",
+    "m": "급성의"
+   },
+   {
+    "w": "thrombus",
+    "m": "혈전"
+   },
+   {
+    "w": "embolism",
+    "m": "색전증"
+   },
+   {
+    "w": "ischemia",
+    "m": "허혈"
+   },
+   {
+    "w": "infarction",
+    "m": "경색"
+   },
+   {
+    "w": "hemorrhage",
+    "m": "출혈"
+   },
+   {
+    "w": "fibrosis",
+    "m": "섬유화"
+   },
+   {
+    "w": "atrophy",
+    "m": "위축"
+   },
+   {
+    "w": "hypertrophy",
+    "m": "비대"
+   },
+   {
+    "w": "hyperplasia",
+    "m": "과형성"
+   },
+   {
+    "w": "kidney",
+    "m": "신장"
+   },
+   {
+    "w": "liver",
+    "m": "간"
+   },
+   {
+    "w": "lung",
+    "m": "폐"
+   },
+   {
+    "w": "spleen",
+    "m": "비장"
+   },
+   {
+    "w": "pancreas",
+    "m": "췌장"
+   }
+  ]
+ }
+];
 
 /* ================= audio ================= */
 let AC=null,muted=LS.get("wf_mute",false),master=null;
@@ -540,9 +1131,31 @@ function buildFort(){
   for(let i=0;i<10;i++){let x=FX*(.2+RC()*.75),y=top+30+RC()*(fieldBot-top);const pts=[[x,y]];for(let k=0;k<5+RC()*4;k++){x+=(RC()-.5)*22;y+=(RC()-.3)*18;pts.push([x,y])}CRACKS.push(pts)}
 }
 
+/* ================= stages ================= */
+const STAGES=[
+  {need:0,    name:"숲의 가장자리", travel:16,   spawn:2.6,  cap:4,  gold:0,   types:{slime:1}},
+  {need:400,  name:"안개 낀 들판",  travel:14.6, spawn:2.3,  cap:5,  gold:.04, types:{slime:.7,imp:.3}},
+  {need:1000, name:"박쥐 동굴 입구", travel:13.3, spawn:2.1,  cap:6,  gold:.05, types:{slime:.5,imp:.3,bat:.2}},
+  {need:1900, name:"유령의 언덕",   travel:12.1, spawn:1.9,  cap:7,  gold:.06, types:{slime:.4,imp:.25,bat:.2,ghost:.15}},
+  {need:3100, name:"골렘의 길목",   travel:11,   spawn:1.75, cap:8,  gold:.06, types:{slime:.35,imp:.25,bat:.2,ghost:.2},boss:3},
+  {need:4700, name:"붉은 달",       travel:10,   spawn:1.6,  cap:9,  gold:.07, types:{slime:.3,imp:.3,bat:.2,ghost:.2}},
+  {need:6700, name:"폭풍 전야",     travel:9.1,  spawn:1.45, cap:10, gold:.07, types:{slime:.25,imp:.3,bat:.25,ghost:.2}},
+  {need:9200, name:"어둠의 행군",   travel:8.3,  spawn:1.3,  cap:11, gold:.08, types:{slime:.2,imp:.3,bat:.25,ghost:.25},boss:4},
+  {need:12300,name:"마지막 방벽",   travel:7.5,  spawn:1.15, cap:12, gold:.08, types:{slime:.2,imp:.3,bat:.25,ghost:.25}},
+  {need:16000,name:"최후의 결전",   travel:6.7,  spawn:1.0,  cap:14, gold:.09, types:{slime:.15,imp:.3,bat:.3,ghost:.25},boss:5}
+];
+const MAXST=STAGES.length;
+const ST=()=>STAGES[clamp((G.stage||1)-1,0,MAXST-1)];
+function stageOf(score){let s=1;for(let i=0;i<MAXST;i++)if(score>=STAGES[i].need)s=i+1;return s}
+function pickType(){const t=ST().types;let r=Math.random(),acc=0;for(const k in t){acc+=t[k];if(r<acc)return k}return "slime"}
+
+/* ================= word state ================= */
+let PAIRS=[],MEANMAP=new Map();
+function norm(s){return String(s).trim().toLowerCase().replace(/\s+/g," ")}
+function buildMeanMap(){MEANMAP=new Map();for(const p of PAIRS){const k=p.m;if(!MEANMAP.has(k))MEANMAP.set(k,new Set());MEANMAP.get(k).add(norm(p.w))}}
+
 /* ================= game state ================= */
-const G={mode:"title",paused:false,t:0,mons:[],parts:[],floats:[],bolts:[],rings:[],shake:0,dmgFlash:0,freeze:0,banner:null,demoT:0,hp:100,maxHp:100,dispScore:0};
-let player={nick:"",pwHash:""};
+const G={mode:"title",paused:false,t:0,stage:1,mons:[],parts:[],floats:[],bolts:[],rings:[],shake:0,dmgFlash:0,freeze:0,banner:null,demoT:0,hp:100,maxHp:100,dispScore:0};
 let lastResult=null;
 
 function laneCount(){return Math.max(3,Math.floor((fieldBot-fieldTop-40)/(64*GS)))}
@@ -556,11 +1169,10 @@ const TYPES={
   boss:{size:52,speed:.42,cols:["#8f7d6a"],dmg:30}
 };
 function pickPair(){
-  const active=new Set(G.mons.filter(m=>!m.dead).map(m=>norm(m.word)));
-  const activeM=new Set(G.mons.filter(m=>!m.dead).map(m=>m.meaning));
+  const live=G.mons.filter(m=>!m.dead&&!m.demo);
+  const active=new Set(live.map(m=>norm(m.word))),activeM=new Set(live.map(m=>m.meaning));
   const pool=PAIRS.filter(p=>!active.has(norm(p.w))&&!activeM.has(p.m));
-  if(!pool.length) return null;
-  // favor words missed before
+  if(!pool.length)return null;
   if(G.misses&&Math.random()<.25){const mm=pool.filter(p=>G.misses[norm(p.w)]);if(mm.length)return mm[Math.random()*mm.length|0]}
   return pool[Math.random()*pool.length|0];
 }
@@ -573,11 +1185,10 @@ function chooseLane(){
 function spawn(type,opts={}){
   const p=opts.demo?{w:"",m:""}:pickPair();if(!p)return null;
   const T=TYPES[type];const lane=opts.lane??chooseLane();const y=laneY(lane);
-  const d=DIFF[diffKey];
-  const travel=opts.demo?18:Math.max(5.2,15.5-(G.level-1)*.75)*d.speed;
+  const travel=opts.demo?18:ST().travel;
   const m={type,size:T.size,word:p.w,meaning:p.m,lane,x:W+60+rand(0,40),y,ph:rand(0,6),col:T.cols[Math.random()*T.cols.length|0],
     speed:(W-FX)/travel*T.speed*rand(.92,1.08),hp:1,maxHp:1,gold:!!opts.gold,boss:type==="boss",flash:0,dead:false,demo:!!opts.demo,age:0,kb:0};
-  if(m.boss){m.hp=m.maxHp=3+Math.floor(G.level/10);m.rock=Array.from({length:11},(_, i)=>.85+Math.random()*.25)}
+  if(m.boss){m.hp=m.maxHp=opts.hp||3;m.rock=Array.from({length:11},()=>.85+Math.random()*.25)}
   G.mons.push(m);return m;
 }
 
@@ -586,7 +1197,9 @@ const hud=$("#hud"),bar=$("#bar"),inp=$("#inp"),iw=$("#iw"),feed=$("#feed");
 function updHud(){
   $("#hpFill").style.width=(G.hp/G.maxHp*100)+"%";$("#hpGhost").style.width=(G.hp/G.maxHp*100)+"%";
   $("#hpText").textContent=Math.ceil(G.hp);
-  $("#hLevel").textContent=G.level;
+  $("#hStageN").textContent=G.stage;
+  const cur=STAGES[G.stage-1].need,nxt=G.stage<MAXST?STAGES[G.stage].need:null;
+  $("#stFill").style.width=(nxt?clamp((G.score-cur)/(nxt-cur),0,1)*100:100)+"%";
   $("#hComboN").textContent=G.combo;
   const mul=comboMul();$("#hMul").textContent=mul>1?"×"+mul.toFixed(1):"";
 }
@@ -595,13 +1208,25 @@ function flashInput(cls){iw.classList.remove("ok","bad");void iw.offsetWidth;iw.
 
 /* ================= game flow ================= */
 function startGame(){
-  Object.assign(G,{mode:"play",paused:false,t:0,score:0,dispScore:0,level:1,kills:0,combo:0,maxCombo:0,hp:100,maxHp:100,
-    mons:[],parts:[],floats:[],bolts:[],rings:[],spawnT:1.2,freeze:0,shake:0,dmgFlash:0,attempts:0,hits:0,chars:0,misses:{},bossLevel:0,banner:{text:"방어 시작!",sub:"뜻을 보고 영단어를 입력하세요",t:0,col:"#7fe6ff"},overT:0});
+  Object.assign(G,{mode:"play",paused:false,t:0,score:0,dispScore:0,stage:1,kills:0,combo:0,maxCombo:0,hp:100,maxHp:100,
+    mons:[],parts:[],floats:[],bolts:[],rings:[],spawnT:1.2,freeze:0,shake:0,dmgFlash:0,attempts:0,hits:0,chars:0,misses:{},
+    banner:{text:"STAGE 1",sub:STAGES[0].name+" — 뜻을 보고 영단어를 입력하세요",t:0,col:"#7fe6ff"},overT:0});
   document.querySelectorAll(".ov").forEach(o=>o.classList.remove("on"));
   hud.classList.add("on");bar.classList.add("on");
-  $("#hName").textContent=player.nick;
+  $("#hName").textContent=SESSION.nick;$("#hBook").textContent="📖 "+BOOK.title;
   inp.value="";feed.innerHTML="";updHud();
   setTimeout(()=>inp.focus(),50);
+}
+function addScore(pts){
+  G.score+=pts;
+  const ns=stageOf(G.score);
+  if(ns>G.stage){
+    G.stage=ns;const S=STAGES[ns-1];SFX.level();
+    G.banner={text:ns===MAXST?"FINAL STAGE":"STAGE "+ns,sub:S.name+(ns===MAXST?" — 끝까지 버텨라!":""),t:0,col:ns===MAXST?"#ffd36b":"#7fe6ff"};
+    for(let i=0;i<30;i++)G.parts.push({x:rand(FX,W),y:rand(fieldTop,fieldBot),vx:0,vy:-rand(20,60),life:1.4,max:1.4,col:"#9be7ff",size:rand(1.5,3),g:0,glow:true});
+    if(S.boss){setTimeout(()=>{if(G.mode==="play"){spawn("boss",{lane:Math.floor(laneCount()/2),hp:S.boss});SFX.boss();G.banner={text:"보스 출현!",sub:S.boss+"번 맞혀야 쓰러져요",t:0,col:"#ff6b7d"};G.shake=10}},1400)}
+  }
+  updHud();
 }
 function submit(){
   const raw=inp.value;const ans=norm(raw);inp.value="";checkIme();
@@ -626,8 +1251,7 @@ function hitMonster(m,ans){
   SFX.zap();
   const close=(m.x-FX)<(W-FX)*.18;
   G.combo++;G.maxCombo=Math.max(G.maxCombo,G.combo);
-  const base=(10+ans.length*6)*(1+(G.level-1)*.12)*comboMul()*DIFF[diffKey].score*(close?1.5:1)*(m.boss?2:1)*(m.gold?2:1);
-  const pts=Math.round(base);G.score+=pts;
+  const pts=Math.round((10+ans.length*6)*(1+(G.stage-1)*.15)*comboMul()*(close?1.5:1)*(m.boss?2:1)*(m.gold?2:1));
   flashInput("ok");
   feed.innerHTML=`<span class="w">${esc(m.word)}</span> = ${esc(m.meaning)} <span class="g">+${pts}</span>${close?' <span class="g">아슬아슬!</span>':''}`;feed.style.color="#c9d1f5";
   if(m.boss&&m.hp>1){
@@ -635,10 +1259,9 @@ function hitMonster(m,ans){
     burst(m.x,m.y-m.size*GS,"#ffb36b",26,260);
     floatText(m.x,m.y-m.size*2.4*GS,"+"+pts,"#ffd36b",26);
     const p=pickPair();if(p){m.word=p.w;m.meaning=p.m}
-    updHud();return;
+    addScore(pts);return;
   }
   killMonster(m,pts,close);
-  updHud();
 }
 function killMonster(m,pts,close){
   m.dead=true;G.kills++;
@@ -651,11 +1274,7 @@ function killMonster(m,pts,close){
   floatText(m.x,m.y-s*2.2-22*GS,m.word,"#7fe6ff",14,true);
   if(m.boss){G.shake=16;SFX.level();G.banner={text:"보스 격파!",sub:"요새 체력 +25",t:0,col:"#ffd36b"};G.hp=Math.min(G.maxHp,G.hp+25)}
   if(m.gold)powerUp(m);
-  const nl=1+Math.floor(G.kills/8);
-  if(nl>G.level){G.level=nl;SFX.level();
-    if(G.level%5===0&&G.bossLevel!==G.level){G.bossLevel=G.level;setTimeout(()=>{if(G.mode==="play"){spawn("boss",{lane:Math.floor(laneCount()/2)});SFX.boss();G.banner={text:"보스 출현!",sub:"여러 번 맞혀야 쓰러져요",t:0,col:"#ff6b7d"};G.shake=10}},900)}
-    else G.banner={text:"LEVEL "+G.level,sub:"몬스터가 더 빠르고 많아져요",t:0,col:"#7fe6ff"};
-  }
+  addScore(pts);
 }
 function powerUp(m){
   SFX.power();
@@ -665,13 +1284,13 @@ function powerUp(m){
   else if(k==="freeze"){G.freeze=4.5;G.banner={text:"빙결",sub:"4초간 몬스터 정지",t:0,col:"#bfefff"}}
   else{G.banner={text:"번개 폭풍",sub:"화면의 몬스터 일소",t:0,col:"#ffd36b"};
     const [cx,cy]=crystalPos();let d=0;
-    for(const o of G.mons){if(o.dead||o.boss||o.demo)continue;const oo=o;d+=70;setTimeout(()=>{if(oo.dead||G.mode!=="play")return;zapBolt(cx,cy,oo.x,oo.y-oo.size*GS,"#ffd36b");const pts=Math.round((10+oo.word.length*3)*DIFF[diffKey].score);G.score+=pts;killMonster(oo,pts,false);updHud()},d)}
+    for(const o of G.mons){if(o.dead||o.boss||o.demo)continue;const oo=o;d+=70;setTimeout(()=>{if(oo.dead||G.mode!=="play")return;zapBolt(cx,cy,oo.x,oo.y-oo.size*GS,"#ffd36b");const pts=Math.round((10+oo.word.length*3)*(1+(G.stage-1)*.15));killMonster(oo,pts,false)},d)}
   }
   updHud();
 }
 function damage(m){
   m.dead=true;
-  const dmg=TYPES[m.type].dmg*DIFF[diffKey].dmg;
+  const dmg=TYPES[m.type].dmg*(1+(G.stage-1)*.06);
   G.hp=Math.max(0,G.hp-dmg);G.combo=0;
   const k=norm(m.word);G.misses[k]=G.misses[k]||{w:m.word,m:m.meaning,n:0};G.misses[k].n++;
   SFX.hit();G.shake=Math.max(G.shake,m.boss?24:12);G.dmgFlash=1;
@@ -687,33 +1306,35 @@ function gameOver(){
   G.mode="dying";G.overT=0;SFX.over();G.shake=30;inp.blur();
   for(let i=0;i<8;i++)setTimeout(()=>{burst(rand(0,FX),rand(fieldTop-60,fieldBot),"#ff8a5a",40,320);burst(rand(0,FX),rand(fieldTop,fieldBot),"#8a90a8",30,250,true);G.shake=20},i*160);
   const dur=G.t;
-  const res={score:G.score,level:G.level,kills:G.kills,maxCombo:G.maxCombo,acc:G.attempts?Math.round(G.hits/G.attempts*100):0,
-    cpm:dur>0?Math.round(G.chars/(dur/60)):0,time:dur,diff:diffKey,misses:Object.values(G.misses).sort((a,b)=>b.n-a.n)};
+  const res={score:G.score,stage:G.stage,kills:G.kills,maxCombo:G.maxCombo,acc:G.attempts?Math.round(G.hits/G.attempts*100):0,
+    cpm:dur>0?Math.round(G.chars/(dur/60)):0,time:dur,misses:Object.values(G.misses).sort((a,b)=>b.n-a.n)};
   lastResult=res;
   setTimeout(()=>showOver(res),1700);
 }
 async function showOver(res){
   G.mode="over";hud.classList.remove("on");bar.classList.remove("on");
   $("#fScore").textContent="0";
-  $("#sLevel").textContent=res.level;$("#sKills").textContent=res.kills;$("#sCombo").textContent=res.maxCombo;
+  $("#sStage").textContent=res.stage+(res.stage===MAXST?" (MAX)":"");$("#sKills").textContent=res.kills;$("#sCombo").textContent=res.maxCombo;
   $("#sAcc").textContent=res.acc+"%";$("#sCpm").textContent=res.cpm;$("#sTime").textContent=fmtTime(res.time);
   $("#missN").textContent=res.misses.length;
   $("#missList").innerHTML=res.misses.length?res.misses.map(x=>`<span><b>${esc(x.w)}</b><i>${esc(x.m)}</i>${x.n>1?` ×${x.n}`:""}</span>`).join(""):'<div class="empty" style="padding:10px 0;width:100%">놓친 단어가 없어요. 완벽해요!</div>';
   $("#newBadge").style.display="none";$("#hofMsg").textContent="명예의 전당에 기록하는 중…";$("#hofMsg").style.color="var(--mut)";
   $("#scOver").classList.add("on");
-  // count up
   const t0=performance.now();const tick=n=>{const k=Math.min(1,(n-t0)/900);$("#fScore").textContent=Math.round(res.score*(1-Math.pow(1-k,3))).toLocaleString();if(k<1)requestAnimationFrame(tick)};requestAnimationFrame(tick);
-  const r=await submitScore(res);
   const msg=$("#hofMsg");
-  if(!r.ok){msg.textContent=r.msg;msg.style.color="var(--red)";return}
-  if(r.newBest){$("#newBadge").style.display="block"}
-  const rank=r.rank;
-  msg.innerHTML=r.newBest?(rank?`개인 최고 기록! 명예의 전당 <b style="color:var(--gold)">${rank}위</b>`:"개인 최고 기록 갱신!")
-    :`개인 최고 기록 <b style="color:var(--gold)">${r.best.toLocaleString()}</b>점${rank?` · 현재 ${rank}위`:""}`;
-  msg.style.color="#dfe4ff";
+  try{
+    const r=await api("score",{method:"POST",body:{...cred(),book:BOOK.id,score:res.score,stage:res.stage,kills:res.kills,combo:res.maxCombo,acc:res.acc,cpm:res.cpm,time:Math.round(res.time)}});
+    if(Array.isArray(r.rows)){HOF_ROWS=r.rows;renderHof()}
+    if(r.newBest)$("#newBadge").style.display="block";
+    const bt=`『${esc(BOOK.title)}』`;
+    msg.innerHTML=r.newBest?`${bt} 명예의 전당 <b style="color:var(--gold)">${r.rank}위</b> 기록!`
+      :res.score<=0?"0점은 기록되지 않아요":`${bt} 내 최고 기록 <b style="color:var(--gold)">${Number(r.best).toLocaleString()}</b>점${r.rank?` · ${r.rank}위`:""}`;
+    msg.style.color="#dfe4ff";
+  }catch(e){msg.textContent=e.api?e.message:"서버에 연결하지 못해 기록하지 못했어요.";msg.style.color="var(--red)"}
 }
 
 /* ================= FX ================= */
+
 function burst(x,y,col,n,sp,smoke){
   for(let i=0;i<n;i++){const a=rand(0,Math.PI*2),v=rand(.25,1)*sp*GS;
     G.parts.push({x,y,vx:Math.cos(a)*v,vy:Math.sin(a)*v-sp*.25,life:rand(.4,.9)*(smoke?1.6:1),max:1,col,size:rand(1.5,4.5)*GS*(smoke?2:1),g:smoke?-40:420,glow:!smoke,smoke})}
@@ -733,19 +1354,14 @@ function update(dt){
   G.t+=dt;
   if(G.mode==="play"){
     G.spawnT-=dt;
-    const d=DIFF[diffKey];
+    const S=ST();
     const alive=G.mons.filter(m=>!m.dead).length;
-    const cap=Math.min(4+G.level,15,PAIRS.length);
+    const cap=Math.min(S.cap,PAIRS.length);
     if(G.spawnT<=0&&G.freeze<=0){
       if(alive<cap){
-        const L=G.level;const r=Math.random();
-        let type="slime";
-        if(L>=2&&r<.3)type="imp";
-        if(L>=3&&r>=.3&&r<.5)type="bat";
-        if(L>=4&&r>=.5&&r<.62)type="ghost";
-        spawn(type,{gold:L>=2&&Math.random()<.07});
+        spawn(pickType(),{gold:Math.random()<S.gold});
       }
-      G.spawnT=Math.max(.5,2.5-(G.level-1)*.15)*d.spawn*rand(.75,1.2);
+      G.spawnT=S.spawn*rand(.75,1.2);
     }
   }
   if(G.freeze>0)G.freeze-=dt;
@@ -1060,99 +1676,222 @@ function frame(now){
   requestAnimationFrame(frame);
 }
 
-/* ================= hall of fame (server API, local fallback) ================= */
-const API="/api/hof";
-let hofRows=[],hofOnline=false;
-function localHof(){return LS.get("wf_hof",[])}
-function setLocalHof(rows){LS.set("wf_hof",rows.slice(0,100))}
-async function hashPw(nick,pw){
-  const s="word-fortress|"+norm(nick)+"|"+pw;
-  try{const buf=await crypto.subtle.digest("SHA-256",new TextEncoder().encode(s));return [...new Uint8Array(buf)].map(b=>b.toString(16).padStart(2,"0")).join("")}
-  catch(e){let h=2166136261;for(let i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619)}return "f"+(h>>>0).toString(16)}
+/* ================= backend (server API, offline fallback with same core) ================= */
+let API_MODE="remote";
+const LSTORE={get(k){try{const v=localStorage.getItem("wf2:"+k);return v?JSON.parse(v):null}catch(e){return null}},
+  set(k,v){try{v==null?localStorage.removeItem("wf2:"+k):localStorage.setItem("wf2:"+k,JSON.stringify(v))}catch(e){}}};
+async function sha(s){try{const b=await crypto.subtle.digest("SHA-256",new TextEncoder().encode(s));return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,"0")).join("")}
+  catch(e){let h=2166136261;for(let i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619)}return "f"+(h>>>0).toString(16)}}
+function rid(n){const a="abcdefghijklmnopqrstuvwxyz0123456789",b=new Uint8Array(n);try{crypto.getRandomValues(b)}catch(e){for(let i=0;i<n;i++)b[i]=Math.random()*256|0}let s="";for(const x of b)s+=a[x%36];return s}
+async function callLocal(route,method,query,body){
+  const r=await handle({store:LSTORE,hash:async(pw,salt)=>sha(salt+"|"+pw),builtins:BUILTINS,route,method,query,body,randomId:rid});
+  if(r.status!==200){const e=new Error(r.data.error);e.status=r.status;e.api=true;throw e}return r.data;
 }
-async function api(method,body){
-  const r=await fetch(API,{method,headers:body?{"Content-Type":"application/json"}:{},body:body?JSON.stringify(body):undefined,cache:"no-store"});
+async function callRemote(route,method,query,body){
+  const qs=query?"?"+new URLSearchParams(query):"";
+  const r=await fetch("/api/"+route+qs,{method,cache:"no-store",headers:body?{"Content-Type":"application/json"}:{},body:body?JSON.stringify(body):undefined});
   let j=null;try{j=await r.json()}catch(e){}
-  if(!r.ok){const err=new Error((j&&j.error)||("HTTP "+r.status));err.status=r.status;err.api=!!j;throw err}
+  if(!j){const e=new Error("서버에 연결하지 못했어요.");e.net=true;throw e}
+  if(!r.ok){const e=new Error(j.error||"오류가 났어요.");e.status=r.status;e.api=true;throw e}
   return j;
 }
+function api(route,{method="GET",query=null,body=null}={}){return API_MODE==="local"?callLocal(route,method,query,body):callRemote(route,method,query,body)}
+async function detectBackend(){try{await callRemote("books","GET",null,null);API_MODE="remote"}catch(e){API_MODE="local"}}
+
+/* ================= session & current book ================= */
+let SESSION=null,BOOK=null,HOF_ROWS=[];
+const cred=()=>SESSION?{nick:SESSION.nick,pw:SESSION.pw}:{};
+const SS={get(k){try{return JSON.parse(sessionStorage.getItem(k))}catch(e){return null}},set(k,v){try{v==null?sessionStorage.removeItem(k):sessionStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+const noTag=b=>b&&b.no?`No.${b.no}`:"";
+function toast(msg,err){const t=$("#toast");t.textContent=msg;t.className=err?"on err":"on";clearTimeout(toast.t);toast.t=setTimeout(()=>t.className=err?"err":"",2600)}
+
+function renderUser(){
+  const on=!!SESSION;
+  if(on){$("#uName").textContent=SESSION.nick+" 님";$("#uAv").textContent=[...SESSION.nick][0]||"?"}
+  if(G.mode==="title"){$("#scLogin").classList.toggle("on",!on);$("#scTitle").classList.toggle("on",on)}
+  renderBook();
+}
+function renderBook(){
+  if(!BOOK){$("#bTitle").textContent="불러오는 중…";$("#bMeta").innerHTML="";return}
+  $("#bTitle").textContent=BOOK.title;
+  const mine=SESSION&&!BOOK.builtin&&BOOK.owner.toLowerCase()===SESSION.nick.toLowerCase();
+  $("#bMeta").innerHTML=`<span class="bdg off">${noTag(BOOK)}</span>${BOOK.builtin?'<span class="bdg off">기본 제공</span>':BOOK.public?'<span class="bdg pub">공개</span>':'<span class="bdg pri">비공개</span>'}<span>${esc(BOOK.owner)}</span><span>· ${BOOK.pairs.length}단어</span>`;
+  $("#btnEditCur").style.display=mine?"":"none";
+  $("#hofTitle").textContent=`『${BOOK.title}』 명예의 전당`;
+}
+async function setBook(book){
+  BOOK=book;PAIRS=book.pairs||[];buildMeanMap();LS.set("wf_book",book.id);
+  renderBook();loadHof();
+}
+async function loadBookById(id){
+  const r=await api("book",{method:"POST",body:{id,...cred()}});return r.book;
+}
 async function loadHof(){
-  try{const j=await api("GET");if(Array.isArray(j.rows)){hofRows=j.rows;hofOnline=true}}
-  catch(e){hofOnline=false}
+  if(!BOOK)return;
+  try{const r=await api("hof",{query:{book:BOOK.id}});HOF_ROWS=r.rows||[]}catch(e){HOF_ROWS=[]}
   renderHof();
 }
 function renderHof(){
-  const tag=$("#hofTag");tag.textContent=hofOnline?"온라인 랭킹":"이 기기 기록";tag.className="tag"+(hofOnline?"":" loc");
-  const rows=(hofOnline?hofRows:localHof()).filter(r=>r&&typeof r.score==="number"&&r.score>0).sort((a,b)=>b.score-a.score).slice(0,20);
-  const me=norm(player.nick||$("#nick").value||"");
-  $("#hofList").innerHTML=rows.length?rows.map((r,i)=>`<li class="${norm(r.name)===me&&me?"me":""}"><span class="rk">${i<3?["Ⅰ","Ⅱ","Ⅲ"][i]:i+1}</span><span class="nm">${esc(r.name)}<span class="sub">Lv.${esc(r.level||1)} · ${esc((DIFF[r.diff]||DIFF.normal).name)} · 콤보 ${esc(r.combo||0)}</span></span><span class="sc">${Number(r.score).toLocaleString()}</span></li>`).join("")
-    :`<div class="empty">아직 기록이 없어요.<br>첫 번째 수비대장이 되어 보세요!</div>`;
-}
-function rankOf(name,score){const rows=localHof().filter(r=>r&&r.score>0).sort((a,b)=>b.score-a.score);
-  const i=rows.findIndex(r=>norm(r.name)===norm(name));if(i>=0)return i+1;return rows.filter(r=>r.score>score).length+1}
-loadHof();
-setInterval(()=>{if(G.mode==="title"||G.mode==="over")loadHof()},20000);
-async function checkLogin(nick,pw,pwHash){
-  if(hofOnline){
-    try{await api("POST",{action:"check",nick,pw});return null}
-    catch(e){if(e.status===401||e.status===400)return e.message;hofOnline=false;renderHof()}
-  }
-  const r=localHof().find(x=>norm(x.name)===norm(nick));if(r&&r.pw&&r.pw!==pwHash)return "이미 등록된 닉네임이에요. 비밀번호가 맞지 않아요.";return null;
-}
-async function submitScore(res){
-  const nick=player.nick;
-  if(hofOnline){
-    try{
-      const j=await api("POST",{action:"submit",nick,pw:player.pw,score:res.score,level:res.level,kills:res.kills,combo:res.maxCombo,acc:res.acc,cpm:res.cpm,diff:res.diff,time:Math.round(res.time)});
-      if(Array.isArray(j.rows)){hofRows=j.rows;renderHof()}
-      return {ok:true,newBest:j.newBest,best:j.best,rank:j.rank};
-    }catch(e){return {ok:false,msg:e.api?e.message:"서버에 연결하지 못해 기록하지 못했어요."}}
-  }
-  const pw=player.pwHash;
-  const rec={name:nick,pw,score:res.score,level:res.level,kills:res.kills,combo:res.maxCombo,acc:res.acc,cpm:res.cpm,diff:res.diff,at:Date.now()};
-  const rows=localHof();const i=rows.findIndex(x=>norm(x.name)===norm(nick));
-  if(i>=0){if(rows[i].pw&&rows[i].pw!==pw)return {ok:false,msg:"비밀번호가 달라 기록하지 못했어요"};
-    if(res.score<=rows[i].score){return {ok:true,newBest:false,best:rows[i].score,rank:rankOf(nick,rows[i].score)}}
-    rows[i]=rec}else if(res.score>0)rows.push(rec);
-  rows.sort((a,b)=>b.score-a.score);setLocalHof(rows);renderHof();
-  return {ok:true,newBest:res.score>0,rank:rankOf(nick,res.score),best:res.score};
+  const tag=$("#hofTag");tag.textContent=API_MODE==="remote"?"온라인":"이 기기";tag.className="tag"+(API_MODE==="remote"?"":" loc");
+  const rows=HOF_ROWS.filter(r=>r&&r.score>0).slice(0,20);
+  const me=SESSION?SESSION.nick.toLowerCase():"";
+  $("#hofList").innerHTML=rows.length?rows.map((r,i)=>`<li class="${me&&String(r.name).toLowerCase()===me?"me":""}"><span class="rk">${i<3?["Ⅰ","Ⅱ","Ⅲ"][i]:i+1}</span><span class="nm">${esc(r.name)}<span class="sub">STAGE ${esc(r.stage||1)} · 콤보 ${esc(r.combo||0)} · 정확도 ${esc(r.acc||0)}%</span></span><span class="sc">${Number(r.score).toLocaleString()}</span></li>`).join("")
+    :`<div class="empty">이 단어장의 첫 기록을 남겨 보세요!</div>`;
 }
 
-/* ================= UI wiring ================= */
+/* ================= login ================= */
 const nickI=$("#nick"),pwI=$("#pw");
 nickI.value=LS.get("wf_nick","");
-function refreshWordCount(){$("#wCount").textContent=PAIRS.length}
-refreshWordCount();
-function setDiff(k){diffKey=k;LS.set("wf_diff",k);document.querySelectorAll("#diffSeg button").forEach(b=>b.classList.toggle("on",b.dataset.d===k))}
-setDiff(diffKey);
-$("#diffSeg").addEventListener("click",e=>{const b=e.target.closest("button");if(b){setDiff(b.dataset.d);SFX.click()}});
-nickI.addEventListener("input",renderHof);
-$("#btnStart").addEventListener("click",async()=>{
-  ac();const err=$("#loginErr");err.textContent="";
-  const nick=nickI.value.trim().replace(/\s+/g," ");const pw=pwI.value;
-  if(!nick){err.textContent="닉네임을 입력해 주세요.";nickI.focus();return}
-  if(nick.length>12){err.textContent="닉네임은 12자 이하로 해 주세요.";return}
-  if(pw.length<2){err.textContent="비밀번호를 2자 이상 입력해 주세요.";pwI.focus();return}
-  if(PAIRS.length<3){err.textContent="단어장에 3쌍 이상 필요해요. 단어장을 편집해 주세요.";return}
-  const h=await hashPw(nick,pw);
-  $("#btnStart").disabled=true;
-  const msg=await checkLogin(nick,pw,h);
-  $("#btnStart").disabled=false;
-  if(msg){err.textContent=msg;return}
-  player={nick,pw,pwHash:h};LS.set("wf_nick",nick);
+async function doLogin(nick,pw,silent){
+  const err=$("#loginErr");err.textContent="";
+  try{
+    const r=await api("login",{method:"POST",body:{nick,pw}});
+    SESSION={nick:r.nick,pw};LS.set("wf_nick",r.nick);SS.set("wf_sess",SESSION);
+    if(!silent)toast(r.created?`환영해요, ${r.nick} 님! 닉네임이 등록됐어요`:`${r.nick} 님, 다시 오셨네요`);
+    renderUser();
+    const want=LS.get("wf_book","basic");
+    if(BOOK&&want!==BOOK.id){try{await setBook(await loadBookById(want))}catch(e){}}
+    renderHof();
+    return true;
+  }catch(e){err.textContent=e.message||"입장에 실패했어요.";return false}
+}
+$("#btnLogin").addEventListener("click",()=>{
+  ac();const nick=nickI.value.trim().replace(/\s+/g," "),pw=pwI.value;
+  if(!nick){$("#loginErr").textContent="닉네임을 입력해 주세요.";nickI.focus();return}
+  if(pw.length<2){$("#loginErr").textContent="비밀번호를 2자 이상 입력해 주세요.";pwI.focus();return}
+  doLogin(nick,pw);
+});
+[nickI,pwI].forEach(el=>el.addEventListener("keydown",e=>{if(e.key==="Enter")$("#btnLogin").click()}));
+$("#btnLogout").addEventListener("click",()=>{SESSION=null;SS.set("wf_sess",null);pwI.value="";document.querySelectorAll(".ov").forEach(o=>o.classList.remove("on"));renderUser();renderHof();setTimeout(()=>nickI.focus(),50);
+  if(BOOK&&!BOOK.public&&!BOOK.builtin)loadBookById("basic").then(setBook).catch(()=>{})});
+$("#btnStart").addEventListener("click",()=>{
+  ac();const err=$("#lobbyErr");err.textContent="";
+  if(!SESSION){renderUser();return}
+  if(!BOOK||PAIRS.length<3){err.textContent="단어가 3쌍 이상 있는 단어장을 골라 주세요.";return}
   SFX.level();G.mons=[];startGame();
 });
-[nickI,pwI].forEach(el=>el.addEventListener("keydown",e=>{if(e.key==="Enter")$("#btnStart").click()}));
-// editor
-const ta=$("#wordsTa");
+
+/* ================= book browser ================= */
+let BK_TAB="public",BK_LIST=[],BK_ARM=null;
+function openBooks(tab){BK_TAB=tab||BK_TAB;$("#scBooks").classList.add("on");
+  document.querySelectorAll("#bkTabs button").forEach(b=>b.classList.toggle("on",b.dataset.t===BK_TAB));
+  $("#bkMode").textContent=API_MODE==="local"?"지금은 오프라인 모드예요. 단어장과 기록이 이 기기에만 저장돼요.":"";
+  loadBooks();setTimeout(()=>$("#bkSearch").focus(),50)}
+async function loadBooks(){
+  const box=$("#bkList");box.innerHTML='<div class="empty">불러오는 중…</div>';
+  const q=$("#bkSearch").value.trim();
+  try{
+    if(BK_TAB==="public"){BK_LIST=(await api("books",{query:q?{q}:null})).books}
+    else{
+      if(!SESSION){box.innerHTML='<div class="empty">입장하면 내 단어장을 볼 수 있어요.</div>';return}
+      let l=(await api("mybooks",{method:"POST",body:cred()})).books;
+      if(q){const n=q.match(/^(?:#|no\.?\s*)?(\d+)$/i);l=n?l.filter(b=>b.no===Number(n[1])):l.filter(b=>(b.title+" "+(b.desc||"")).toLowerCase().includes(q.toLowerCase()))}
+      BK_LIST=l;
+    }
+    renderBooks();
+  }catch(e){box.innerHTML=`<div class="empty">${esc(e.message||"불러오지 못했어요.")}</div>`}
+}
+function renderBooks(){
+  const box=$("#bkList");
+  if(!BK_LIST.length){box.innerHTML=`<div class="empty" style="grid-column:1/-1">${BK_TAB==="mine"?"아직 만든 단어장이 없어요. ‘+ 새 단어장’으로 만들어 보세요.":"검색 결과가 없어요."}</div>`;return}
+  const me=SESSION?SESSION.nick.toLowerCase():"";
+  box.innerHTML=BK_LIST.map(b=>{
+    const mine=!b.builtin&&me&&b.owner.toLowerCase()===me;
+    return `<div class="bitem ${BOOK&&BOOK.id===b.id?"sel":""}" data-id="${esc(b.id)}">
+      <div class="meta"><span class="bdg off">${noTag(b)}</span>${b.builtin?'<span class="bdg off">기본 제공</span>':b.public?'<span class="bdg pub">공개</span>':'<span class="bdg pri">비공개</span>'}${mine?'<span class="bdg mine">내 단어장</span>':""}</div>
+      <h4>${esc(b.title)}</h4><p>${esc(b.desc||"")}</p>
+      <div class="meta"><span>${esc(b.owner)}</span><span>· ${b.count}단어</span><span>· ${b.plays||0}판</span></div>
+      <div class="acts"><button class="btn sm" data-act="view">미리보기</button><button class="btn sm pri" data-act="pick">이걸로 플레이</button>
+      ${mine?`<button class="btn sm" data-act="edit">편집</button><button class="btn sm dng ${BK_ARM===b.id?"arm":""}" data-act="del">${BK_ARM===b.id?"정말 삭제":"삭제"}</button>`:`<button class="btn sm" data-act="copy">복사해서 내 것으로</button>`}</div></div>`}).join("");
+}
+$("#bkList").addEventListener("click",async e=>{
+  const card=e.target.closest(".bitem");if(!card)return;const id=card.dataset.id;
+  const act=(e.target.closest("[data-act]")||{dataset:{act:"view"}}).dataset.act;
+  if(act!=="del")BK_ARM=null;
+  try{
+    if(act==="view"){openPreview(await loadBookById(id))}
+    else if(act==="pick"){await setBook(await loadBookById(id));$("#scBooks").classList.remove("on");toast(`『${BOOK.title}』 단어장을 골랐어요`)}
+    else if(act==="edit"){const b=await loadBookById(id);openEditor(b)}
+    else if(act==="copy"){if(!SESSION){toast("먼저 입장해 주세요",true);return}const b=await loadBookById(id);openEditor({title:(b.title+" (복사)").slice(0,40),desc:b.desc,pairs:b.pairs,public:false})}
+    else if(act==="del"){
+      if(BK_ARM!==id){BK_ARM=id;renderBooks();return}
+      BK_ARM=null;await api("book/delete",{method:"POST",body:{...cred(),id}});toast("단어장을 지웠어요");
+      if(BOOK&&BOOK.id===id)await setBook(await loadBookById("basic"));
+      loadBooks();
+    }
+  }catch(err){toast(err.message||"실패했어요",true)}
+});
+$("#bkTabs").addEventListener("click",e=>{const b=e.target.closest("button");if(b){BK_TAB=b.dataset.t;BK_ARM=null;openBooks()}});
+let bkT=null;$("#bkSearch").addEventListener("input",()=>{clearTimeout(bkT);bkT=setTimeout(loadBooks,250)});
+$("#bkClose").addEventListener("click",()=>$("#scBooks").classList.remove("on"));
+$("#btnBooks").addEventListener("click",()=>openBooks("public"));
+
+/* ================= editor ================= */
+const ta=$("#wordsTa");let EDIT_ID=null,EDIT_PUB=true;
+function setPub(v){EDIT_PUB=v;$("#edPub").classList.toggle("on",v);$("#edPubT").textContent=v?"공개":"비공개";
+  $("#edPubS").textContent=v?"다른 사람도 이름이나 번호로 검색해서 플레이할 수 있어요":"나만 보고 플레이할 수 있어요"}
 function parseInfo(){const r=parseWords(ta.value);$("#parseInfo").innerHTML=`인식된 단어 <b style="color:var(--gold)">${r.pairs.length}</b>쌍${r.bad?` · <span style="color:var(--red)">형식 오류 ${r.bad}줄</span>`:""}`}
-$("#btnEdit").addEventListener("click",()=>{ta.value=WORDTEXT;parseInfo();$("#scEdit").classList.add("on");setTimeout(()=>ta.focus(),50)});
+function openEditor(b){
+  if(!SESSION){toast("단어장을 만들려면 먼저 입장해 주세요",true);return}
+  b=b||{};if(b.id&&!isMine(b)){toast("다른 사람이 만든 단어장은 편집할 수 없어요. 복사해서 쓸 수 있어요",true);return}
+  EDIT_ID=b.id||null;
+  $("#edHead").textContent=EDIT_ID?`단어장 편집 · ${noTag(b)}`:"새 단어장";
+  $("#edTitle").value=b.title||"";$("#edDesc").value=b.desc||"";
+  ta.value=(b.pairs||[]).map(p=>p.w+" - "+p.m).join("\n");
+  setPub(b.public!==undefined?!!b.public:true);$("#edErr").textContent="";parseInfo();
+  $("#scEdit").classList.add("on");setTimeout(()=>(b.title?ta:$("#edTitle")).focus(),50);
+}
+$("#edPub").addEventListener("click",()=>setPub(!EDIT_PUB));
 ta.addEventListener("input",parseInfo);
-document.querySelectorAll("[data-preset]").forEach(b=>b.addEventListener("click",()=>{ta.value=PRESETS[b.dataset.preset];parseInfo()}));
+document.querySelectorAll("[data-preset]").forEach(b=>b.addEventListener("click",()=>{ta.value=(ta.value.trim()?ta.value.trim()+"\n":"")+PRESETS[b.dataset.preset];parseInfo()}));
 $("#edCancel").addEventListener("click",()=>$("#scEdit").classList.remove("on"));
-$("#edSave").addEventListener("click",()=>{const r=parseWords(ta.value);if(r.pairs.length<3){$("#parseInfo").innerHTML='<span style="color:var(--red)">최소 3쌍이 필요해요</span>';return}
-  WORDTEXT=ta.value;PAIRS=r.pairs;buildMeanMap();LS.set("wf_words",WORDTEXT);refreshWordCount();$("#scEdit").classList.remove("on")});
-// input
+$("#edSave").addEventListener("click",async()=>{
+  const err=$("#edErr");err.textContent="";
+  const title=$("#edTitle").value.trim();if(!title){err.textContent="단어장 이름을 정해 주세요.";$("#edTitle").focus();return}
+  const r=parseWords(ta.value);if(r.pairs.length<3){err.textContent="단어가 3쌍 이상 필요해요.";return}
+  $("#edSave").disabled=true;
+  try{
+    const res=await api("book/save",{method:"POST",body:{...cred(),id:EDIT_ID,title,desc:$("#edDesc").value.trim(),pairs:r.pairs,public:EDIT_PUB}});
+    await setBook(await loadBookById(res.book.id));
+    $("#scEdit").classList.remove("on");
+    toast(`저장했어요 · ${noTag(res.book)} 『${res.book.title}』`);
+    if($("#scBooks").classList.contains("on"))loadBooks();
+  }catch(e){err.textContent=e.message||"저장에 실패했어요."}
+  $("#edSave").disabled=false;
+});
+$("#btnNew").addEventListener("click",()=>openEditor());
+$("#bkNew").addEventListener("click",()=>openEditor());
+$("#btnEditCur").addEventListener("click",()=>{if(BOOK)openEditor(BOOK)});
+
+
+/* ================= preview ================= */
+let PV=null;
+function isMine(b){return !!(SESSION&&b&&!b.builtin&&String(b.owner).toLowerCase()===SESSION.nick.toLowerCase())}
+function openPreview(b){
+  PV=b;$("#pvTitle").textContent=b.title;$("#pvDesc").textContent=b.desc||"";
+  $("#pvMeta").innerHTML=`<span class="bdg off">${noTag(b)}</span>${b.builtin?'<span class="bdg off">기본 제공</span>':b.public?'<span class="bdg pub">공개</span>':'<span class="bdg pri">비공개</span>'}${isMine(b)?'<span class="bdg mine">내 단어장</span>':""}<span>${esc(b.owner)}</span><span>· ${b.pairs.length}단어</span><span>· ${b.plays||0}판</span>`;
+  $("#pvSearch").value="";renderPreview();
+  const alt=$("#pvAlt");
+  if(isMine(b)){alt.textContent="편집";alt.style.display=""}
+  else if(SESSION){alt.textContent="복사해서 내 것으로";alt.style.display=""}
+  else alt.style.display="none";
+  $("#pvPlay").textContent=BOOK&&BOOK.id===b.id?"이 단어장으로 플레이 중 · 닫기":"이걸로 플레이";
+  $("#scPrev").classList.add("on");
+}
+function renderPreview(){
+  const q=$("#pvSearch").value.trim().toLowerCase();
+  const rows=PV.pairs.map((p,i)=>[i+1,p]).filter(([,p])=>!q||p.w.toLowerCase().includes(q)||p.m.toLowerCase().includes(q));
+  $("#pvCount").textContent=q?`${rows.length} / ${PV.pairs.length}`:`${PV.pairs.length}단어`;
+  $("#pvBody").innerHTML=rows.map(([i,p])=>`<tr><td>${i}</td><td class="w">${esc(p.w)}</td><td>${esc(p.m)}</td></tr>`).join("")||'<tr><td colspan="3" class="empty">찾는 단어가 없어요</td></tr>';
+}
+$("#pvSearch").addEventListener("input",renderPreview);
+$("#pvClose").addEventListener("click",()=>$("#scPrev").classList.remove("on"));
+$("#pvPlay").addEventListener("click",async()=>{if(!PV)return;if(!BOOK||BOOK.id!==PV.id){await setBook(PV);toast(`『${PV.title}』 단어장을 골랐어요`)}
+  $("#scPrev").classList.remove("on");$("#scBooks").classList.remove("on")});
+$("#pvAlt").addEventListener("click",()=>{if(!PV)return;$("#scPrev").classList.remove("on");
+  if(isMine(PV))openEditor(PV);else openEditor({title:(PV.title+" (복사)").slice(0,40),desc:PV.desc,pairs:PV.pairs,public:false})});
+$("#btnPrevCur").addEventListener("click",()=>{if(BOOK)openPreview(BOOK)});
+/* ================= in-game input & misc ================= */
 inp.addEventListener("keydown",e=>{
   if(e.key==="Enter"&&!e.isComposing){e.preventDefault();submit()}
   else if(e.key==="Escape"){e.preventDefault();togglePause()}
@@ -1161,8 +1900,13 @@ function checkIme(){const has=/[ㄱ-ㅎㅏ-ㅣ가-힣]/.test(inp.value);$("#imeW
 inp.addEventListener("input",checkIme);
 inp.addEventListener("compositionupdate",()=>{$("#imeWarn").style.display="block"});
 document.addEventListener("keydown",e=>{
-  if(e.key==="Escape"&&G.mode==="play"&&document.activeElement!==inp){togglePause()}
-  if(G.mode==="play"&&!G.paused&&document.activeElement!==inp&&e.key.length===1){inp.focus()}
+  if(e.key==="Escape"){
+    if(G.mode==="play"&&document.activeElement!==inp)togglePause();
+    else if($("#scPrev").classList.contains("on"))$("#scPrev").classList.remove("on");
+    else if($("#scEdit").classList.contains("on"))$("#scEdit").classList.remove("on");
+    else if($("#scBooks").classList.contains("on"))$("#scBooks").classList.remove("on");
+  }
+  if(G.mode==="play"&&!G.paused&&document.activeElement!==inp&&e.key.length===1)inp.focus();
 });
 cv.addEventListener("mousedown",()=>{if(G.mode==="play")setTimeout(()=>inp.focus(),0)});
 function togglePause(){
@@ -1173,7 +1917,7 @@ function togglePause(){
 $("#btnPause").addEventListener("click",togglePause);
 $("#btnResume").addEventListener("click",togglePause);
 $("#btnQuit").addEventListener("click",()=>{$("#scPause").classList.remove("on");G.paused=false;G.hp=0;gameOver()});
-function goHome(){document.querySelectorAll(".ov").forEach(o=>o.classList.remove("on"));$("#scTitle").classList.add("on");G.mode="title";G.mons=[];G.banner=null;hud.classList.remove("on");bar.classList.remove("on");renderHof()}
+function goHome(){document.querySelectorAll(".ov").forEach(o=>o.classList.remove("on"));G.mode="title";renderUser();G.mons=[];G.banner=null;hud.classList.remove("on");bar.classList.remove("on");loadHof()}
 $("#btnHome").addEventListener("click",goHome);
 $("#btnAgain").addEventListener("click",()=>{G.mons=[];startGame()});
 function setMute(v){muted=v;LS.set("wf_mute",v);$("#muteWave").style.display=v?"none":"";$("#btnMute").style.opacity=v?.55:1}
@@ -1181,9 +1925,23 @@ setMute(muted);
 $("#btnMute").addEventListener("click",()=>{setMute(!muted);inp.focus()});
 window.addEventListener("blur",()=>{if(G.mode==="play"&&!G.paused)togglePause()});
 window.addEventListener("resize",resize);
+setInterval(()=>{if(G.mode==="title"&&!$("#scBooks").classList.contains("on"))loadHof()},20000);
+
+/* ================= boot ================= */
 resize();
-if(document.fonts&&document.fonts.ready)document.fonts.ready.then(()=>{});
 requestAnimationFrame(frame);
+renderUser();
+(async()=>{
+  await detectBackend();
+  let first;try{first=await loadBookById("basic")}catch(e){const b=BUILTINS[0];first={...b,owner:"단어 요새",builtin:true,public:true,count:b.pairs.length}}
+  const want=LS.get("wf_book","basic");
+  const sess=SS.get("wf_sess");
+  if(sess&&sess.nick&&sess.pw){await doLogin(sess.nick,sess.pw,true)}
+  let b=first;if(want!=="basic"){try{b=await loadBookById(want)}catch(e){}}
+  await setBook(b);
+  renderUser();if(!SESSION)nickI.focus();
+})();
+
 </script>
 </body>
 </html>
