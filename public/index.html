@@ -186,7 +186,7 @@ label.f{display:block;font-size:12px;color:var(--mut);margin:10px 0 6px;font-wei
 .ed .tin{margin-bottom:0}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 @media (max-width:600px){.grid2{grid-template-columns:1fr}}
-#toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,20px);opacity:0;z-index:50;padding:12px 18px;border-radius:14px;background:rgba(20,22,52,.96);border:1px solid rgba(127,230,255,.4);box-shadow:0 10px 30px rgba(0,0,0,.5);font-size:14px;font-weight:500;transition:.25s;pointer-events:none;max-width:90vw;text-align:center}
+#toast{position:fixed;left:50%;top:96px;transform:translate(-50%,-20px);opacity:0;z-index:50;padding:12px 18px;border-radius:14px;background:rgba(20,22,52,.96);border:1px solid rgba(127,230,255,.4);box-shadow:0 10px 30px rgba(0,0,0,.5);font-size:14px;font-weight:500;transition:.25s;pointer-events:none;max-width:90vw;text-align:center}
 #toast.on{opacity:1;transform:translate(-50%,0)}
 #toast.err{border-color:rgba(255,90,110,.6)}
 .modehint{font-size:11px;color:var(--gold);margin-top:8px}
@@ -1006,7 +1006,14 @@ function resize(){
   cv.width=Math.round(W*DPR);cv.height=Math.round(H*DPR);
   GS=clamp(Math.min(W,H*1.4)/900,.72,1.25);
   FX=clamp(W*.1,78,140);
-  fieldTop=Math.max(H*.33,150);fieldBot=H-122;midY=(fieldTop+fieldBot)/2;
+  // 입력창 위·점수판 아래 안쪽에서만 몬스터가 움직이도록 실제 UI 위치를 재서 범위를 정함
+  const iwEl=document.getElementById("iw"),hudEl=document.querySelector("#hud .hcard");
+  const barTop=iwEl?iwEl.getBoundingClientRect().top:H-110;
+  const hudBot=hudEl?hudEl.getBoundingClientRect().bottom:80;
+  fieldBot=Math.min(H-120,barTop-26);
+  fieldTop=Math.max(H*.3,hudBot+78);
+  if(fieldBot-fieldTop<200)fieldTop=Math.max(hudBot+40,fieldBot-200);
+  midY=(fieldTop+fieldBot)/2;
   buildBg();buildFort();
   for(const m of G.mons) m.y=laneY(m.lane);
 }
@@ -1930,6 +1937,7 @@ setInterval(()=>{if(G.mode==="title"&&!$("#scBooks").classList.contains("on"))lo
 /* ================= boot ================= */
 resize();
 requestAnimationFrame(frame);
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(resize);
 renderUser();
 (async()=>{
   await detectBackend();
