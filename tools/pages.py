@@ -20,6 +20,7 @@ def page(fn, title, desc, body, extra_head="", extra_js=""):
 <meta property="og:description" content="{html.escape(desc)}">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#0b0c22">
+<meta name="google-adsense-account" content="ca-pub-6022643424246082">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23141238'/%3E%3Cpath d='M32 6l12 14-12 38-12-38z' fill='%2359d4ff'/%3E%3Cpath d='M32 6l12 14H20z' fill='%23e8fbff'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">

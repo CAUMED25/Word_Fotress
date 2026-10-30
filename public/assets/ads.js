@@ -4,7 +4,7 @@
  * 같은 때에 public/ads.txt 파일도 만들어야 합니다 (README 참고).
  */
 window.WF_ADS = {
-  client: "",            // 예: "ca-pub-1234567890123456"
+  client: "ca-pub-6022643424246082",
   slots: {
     content: "",         // 안내 페이지 본문 아래
     lobby: "",           // 게임 개인 화면
