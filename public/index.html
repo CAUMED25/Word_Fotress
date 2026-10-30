@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>단어 요새 — Word Fortress</title>
 <meta name="description" content="몬스터에 적힌 뜻을 보고 영단어를 타이핑해 요새를 지키는 단어 학습 타자 게임">
+<link rel="canonical" href="https://wordsfortress.com/">
+<script src="/assets/ads.js" defer></script>
 <meta property="og:title" content="단어 요새 — Word Fortress">
 <meta property="og:description" content="뜻을 보고 영단어를 쳐서 몬스터를 막아라! 명예의 전당에 도전하세요.">
 <meta name="theme-color" content="#0b0c22">
@@ -207,6 +209,12 @@ label.f{display:block;font-size:12px;color:var(--mut);margin:10px 0 6px;font-wei
 .lobbytop{display:flex;align-items:center;gap:16px;margin-bottom:18px;flex-wrap:wrap}
 .minilogo{font-family:"Black Han Sans";font-size:30px;background:linear-gradient(180deg,#fffbe8,var(--gold) 50%,#c9761c);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 2px 0 #3b1d05)}
 .lobbytop .user{margin-left:auto;min-width:260px}
+.sitelinks{display:flex;gap:6px 14px;flex-wrap:wrap;justify-content:center;margin-top:16px;font-size:12.5px}
+.sitelinks a{color:var(--mut);text-decoration:none}
+.sitelinks a:hover{color:#fff;text-decoration:underline}
+.tagline{text-align:center;color:#c9d1f5;font-size:14px;line-height:1.7;margin:-8px 0 18px}
+.ad-slot{margin-top:16px}
+.ad-slot:empty{display:none}
 </style>
 </head>
 <body>
@@ -247,6 +255,7 @@ label.f{display:block;font-size:12px;color:var(--mut);margin:10px 0 6px;font-wei
 <div class="ov on" id="scLogin">
   <div class="card" style="width:min(420px,94vw)">
     <div class="logo"><h1>단어 요새</h1><p>WORD · FORTRESS</p></div>
+    <p class="tagline">뜻을 보고 영단어를 직접 타이핑해 몬스터를 막는<br>무료 영단어 학습 게임</p>
     <div class="sec">
       <h3>수비대장 입장</h3>
       <label class="f" for="nick" style="margin-top:0">닉네임</label>
@@ -257,6 +266,7 @@ label.f{display:block;font-size:12px;color:var(--mut);margin:10px 0 6px;font-wei
       <div class="err" id="loginErr"></div>
       <button class="btn go" id="btnLogin" style="margin-top:6px">입장하기</button>
     </div>
+    <nav class="sitelinks"><a href="/guide.html">게임 방법</a><a href="/books.html">공개 단어장</a><a href="/study-tips.html">영단어 공부법</a><a href="/about.html">소개</a><a href="/privacy.html">개인정보처리방침</a><a href="/terms.html">이용약관</a><a href="/contact.html">문의</a></nav>
   </div>
 </div>
 
@@ -291,6 +301,8 @@ label.f{display:block;font-size:12px;color:var(--mut);margin:10px 0 6px;font-wei
         <ol class="hof" id="hofList"></ol>
       </div>
     </div>
+    <div class="ad-slot" data-slot="lobby"></div>
+    <nav class="sitelinks"><a href="/guide.html">게임 방법</a><a href="/books.html">공개 단어장</a><a href="/study-tips.html">영단어 공부법</a><a href="/about.html">소개</a><a href="/privacy.html">개인정보처리방침</a><a href="/terms.html">이용약관</a><a href="/contact.html">문의</a></nav>
   </div>
 </div>
 
@@ -370,6 +382,7 @@ label.f{display:block;font-size:12px;color:var(--mut);margin:10px 0 6px;font-wei
       <h3 style="margin-bottom:10px">놓친 단어 복습 <span class="tag loc" id="missN">0</span></h3>
       <div class="miss" id="missList"></div>
     </div>
+    <div class="ad-slot" data-slot="over"></div>
     <div class="btns"><button class="btn" id="btnHome">메인으로</button><button class="btn go" id="btnAgain">다시 도전 (STAGE 1)</button></div>
   </div>
 </div>
@@ -1326,7 +1339,7 @@ async function showOver(res){
   $("#missN").textContent=res.misses.length;
   $("#missList").innerHTML=res.misses.length?res.misses.map(x=>`<span><b>${esc(x.w)}</b><i>${esc(x.m)}</i>${x.n>1?` ×${x.n}`:""}</span>`).join(""):'<div class="empty" style="padding:10px 0;width:100%">놓친 단어가 없어요. 완벽해요!</div>';
   $("#newBadge").style.display="none";$("#hofMsg").textContent="명예의 전당에 기록하는 중…";$("#hofMsg").style.color="var(--mut)";
-  $("#scOver").classList.add("on");
+  $("#scOver").classList.add("on");setTimeout(fillAds,50);
   const t0=performance.now();const tick=n=>{const k=Math.min(1,(n-t0)/900);$("#fScore").textContent=Math.round(res.score*(1-Math.pow(1-k,3))).toLocaleString();if(k<1)requestAnimationFrame(tick)};requestAnimationFrame(tick);
   const msg=$("#hofMsg");
   try{
@@ -1712,10 +1725,11 @@ const SS={get(k){try{return JSON.parse(sessionStorage.getItem(k))}catch(e){retur
 const noTag=b=>b&&b.no?`No.${b.no}`:"";
 function toast(msg,err){const t=$("#toast");t.textContent=msg;t.className=err?"on err":"on";clearTimeout(toast.t);toast.t=setTimeout(()=>t.className=err?"err":"",2600)}
 
+function fillAds(){try{if(window.WF_ADS&&WF_ADS.fill)WF_ADS.fill()}catch(e){}}
 function renderUser(){
   const on=!!SESSION;
   if(on){$("#uName").textContent=SESSION.nick+" 님";$("#uAv").textContent=[...SESSION.nick][0]||"?"}
-  if(G.mode==="title"){$("#scLogin").classList.toggle("on",!on);$("#scTitle").classList.toggle("on",on)}
+  if(G.mode==="title"){$("#scLogin").classList.toggle("on",!on);$("#scTitle").classList.toggle("on",on);if(on)setTimeout(fillAds,50)}
   renderBook();
 }
 function renderBook(){
@@ -1935,6 +1949,7 @@ window.addEventListener("resize",resize);
 setInterval(()=>{if(G.mode==="title"&&!$("#scBooks").classList.contains("on"))loadHof()},20000);
 
 /* ================= boot ================= */
+try{const qb=new URLSearchParams(location.search).get("book");if(qb){LS.set("wf_book",qb);history.replaceState(null,"",location.pathname)}}catch(e){}
 resize();
 requestAnimationFrame(frame);
 if(document.fonts&&document.fonts.ready)document.fonts.ready.then(resize);

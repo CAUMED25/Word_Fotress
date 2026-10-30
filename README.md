@@ -22,3 +22,14 @@ GitHub에 push하면 Netlify가 자동으로 배포합니다.
 ## 주의
 - 점수는 브라우저에서 계산해 보내므로 작정하고 조작하면 막기 어렵습니다.
 - core.mjs를 고치면 public/index.html 안의 같은 코드도 함께 고쳐야 합니다.
+
+## 안내 페이지 (AdSense 신청용)
+- `public/about.html`, `guide.html`, `study-tips.html`, `books.html`, `book.html`, `privacy.html`, `terms.html`, `contact.html`
+- 내용은 `tools/pages.py`에서 고친 뒤 `python3 tools/pages.py`로 다시 만듭니다.
+- `public/sitemap.xml`, `public/robots.txt`
+
+## 광고 켜기 (AdSense 승인 후)
+1. `public/assets/ads.js`의 `client`에 게시자 ID(ca-pub-…), `slots`에 광고 단위 ID를 넣습니다.
+2. `public/ads.txt` 파일을 만들고 AdSense가 알려 주는 한 줄을 그대로 넣습니다.
+   예: `google.com, pub-1234567890123456, DIRECT, f08c47fec0942fa0`
+3. push하면 안내 페이지 본문 아래, 게임 개인 화면, 게임 오버 화면에 광고가 나옵니다. 게임 진행 화면에는 넣지 않습니다(오클릭 방지).

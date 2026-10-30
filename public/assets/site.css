@@ -1,0 +1,60 @@
+/* 단어 요새 — 안내 페이지 공용 스타일 */
+:root{--bg:#0b0c22;--panel:#14163a;--line:rgba(255,255,255,.1);--txt:#e9ecff;--mut:#9aa3c7;--gold:#ffd36b;--gold2:#f0a93b;--cyan:#7fe6ff;--green:#6dffb0;--red:#ff5a6e}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:radial-gradient(1200px 600px at 70% -10%,#2a1b4d 0,transparent 60%),radial-gradient(900px 500px at 0% 0%,#121a45 0,transparent 60%),var(--bg);color:var(--txt);font:16px/1.85 "Noto Sans KR",system-ui,sans-serif;-webkit-font-smoothing:antialiased;min-height:100vh}
+a{color:var(--cyan);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:860px;margin:0 auto;padding:0 20px}
+header.site{position:sticky;top:0;z-index:10;background:rgba(11,12,34,.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header.site .wrap{display:flex;align-items:center;gap:18px;height:62px;max-width:1080px}
+.brand{font-family:"Black Han Sans",sans-serif;font-size:24px;background:linear-gradient(180deg,#fffbe8,var(--gold) 50%,#c9761c);-webkit-background-clip:text;background-clip:text;color:transparent;white-space:nowrap}
+.brand:hover{text-decoration:none}
+nav.main{display:flex;gap:4px;margin-left:auto;flex-wrap:wrap}
+nav.main a{color:var(--mut);font-size:14px;font-weight:500;padding:6px 10px;border-radius:9px}
+nav.main a:hover,nav.main a.on{color:#fff;background:rgba(255,255,255,.07);text-decoration:none}
+nav.main a.play{color:#2a1500;background:linear-gradient(180deg,#fff0b8,var(--gold) 45%,var(--gold2));font-weight:700}
+@media (max-width:720px){header.site .wrap{height:auto;padding:10px 16px;flex-wrap:wrap;gap:8px}nav.main{margin-left:0}}
+main{padding:44px 0 60px}
+.hero{padding:10px 0 26px;border-bottom:1px solid var(--line);margin-bottom:30px}
+.hero .kicker{font-size:12px;letter-spacing:3px;color:var(--cyan);font-weight:700}
+h1{font-family:"Black Han Sans",sans-serif;font-weight:400;font-size:clamp(32px,5vw,46px);line-height:1.2;margin:6px 0 10px}
+.hero p{color:var(--mut);font-size:17px}
+h2{font-size:22px;font-weight:900;margin:38px 0 12px;padding-top:6px}
+h3{font-size:17px;font-weight:700;margin:24px 0 8px}
+p{margin:0 0 14px}
+ul,ol{margin:0 0 16px 22px}
+li{margin:4px 0}
+strong{color:#fff}
+.box{background:linear-gradient(180deg,rgba(26,28,66,.7),rgba(14,15,38,.7));border:1px solid var(--line);border-radius:18px;padding:20px 22px;margin:18px 0}
+.box.tip{border-color:rgba(127,230,255,.35)}
+.box.gold{border-color:rgba(255,211,107,.4)}
+.muted{color:var(--mut)}
+.small{font-size:13px}
+table{width:100%;border-collapse:collapse;margin:12px 0 20px;font-size:14.5px}
+th,td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{color:var(--mut);font-size:12px;letter-spacing:1px;font-weight:700;background:rgba(255,255,255,.03)}
+.btn{display:inline-block;padding:12px 20px;border-radius:14px;font-weight:700;color:#2a1500;background:linear-gradient(180deg,#fff0b8,var(--gold) 45%,var(--gold2));box-shadow:0 5px 0 #8a4f10}
+.btn:hover{text-decoration:none;filter:brightness(1.06)}
+.btn.ghost{background:rgba(255,255,255,.07);color:#fff;box-shadow:none;border:1px solid var(--line)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;margin:16px 0}
+.card{display:block;padding:16px;border-radius:16px;background:rgba(255,255,255,.04);border:1px solid var(--line);color:var(--txt);transition:.15s}
+.card:hover{border-color:rgba(127,230,255,.5);background:rgba(127,230,255,.06);text-decoration:none;transform:translateY(-1px)}
+.card h4{font-size:16px;font-weight:900;line-height:1.4;margin:6px 0 4px}
+.card p{font-size:13px;color:var(--mut);margin:0 0 6px;line-height:1.6}
+.card .meta{font-size:12px;color:#8a93bd}
+.bdg{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:999px;border:1px solid rgba(255,211,107,.4);color:var(--gold);background:rgba(255,211,107,.08);margin-right:4px}
+.bdg.g{border-color:rgba(109,255,176,.4);color:var(--green);background:rgba(109,255,176,.08)}
+input.search{width:100%;padding:13px 16px;border-radius:14px;border:1px solid rgba(255,255,255,.16);background:rgba(0,0,0,.3);color:#fff;font:inherit;outline:0}
+input.search:focus{border-color:var(--cyan)}
+.toc{font-size:14px}
+.toc a{color:var(--mut)}
+footer.site{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--mut);font-size:13px}
+footer.site .wrap{max-width:1080px;display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+footer.site nav{display:flex;gap:14px;flex-wrap:wrap}
+footer.site nav a{color:var(--mut)}
+footer.site .copy{margin-left:auto}
+.ad-slot{margin:26px 0;min-height:0}
+.ad-slot:empty{display:none}
+.stage-t td:first-child{font-weight:700;color:#fff;white-space:nowrap}
+kbd{font:12px/1 "Noto Sans KR",sans-serif;font-weight:700;padding:4px 7px;border-radius:6px;border:1px solid var(--line);border-bottom-width:3px;background:rgba(255,255,255,.05)}
